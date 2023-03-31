@@ -37,6 +37,7 @@ class ChatGPTBot:
         request = {"role": role, "content": user_message}
         message_history.append(request)
 
+        # other useful parameters: temperature and max_tokens
         completion = openai.ChatCompletion.create(
           model = model,
           messages = message_history
