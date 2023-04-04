@@ -29,6 +29,12 @@ class ImageGenerator:
 
 
 def main():
+    # set page config
+    st.set_page_config(page_title="DALL·E Image Generator",
+                       page_icon=":art:",
+                       layout='centered',
+                       initial_sidebar_state="auto")
+
     st.title('Welcome to DALL·E Image Generator')
     st.subheader("Experience The Magic Of OpenAI's DALL·E Image Generator Bot: Describe, Create, Amaze! :art: ")
 

@@ -47,8 +47,11 @@ class App:
                   '.swift': 'swift', '.bas': 'vba', '.txt': 'plain_text'}
 
     def __init__(self):
-        # make the app wider
-        st.set_page_config(layout = "wide")
+        # set page config
+        st.set_page_config(page_title="CodeMaxGPT",
+                           page_icon=":computer:",
+                           layout='wide',
+                           initial_sidebar_state="collapsed")
         self.bot = None
         # add 'vba' into code language selections
         self.LANGUAGES = LANGUAGES

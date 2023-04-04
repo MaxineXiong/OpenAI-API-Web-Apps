@@ -1,5 +1,11 @@
 import streamlit as st
 
+# set page config
+st.set_page_config(page_title="OpenAI Web Applications",
+                   page_icon=":robot_face:",
+                   layout='centered',
+                   initial_sidebar_state="auto")
+
 st.title("WELCOME TO OPENAI WEB SERVICES!")
 st.header(":rocket: An Unofficial Platform For Custom Web Applications Powered By OpenAI APIs")
 st.subheader(':sunglasses: By Maxine Xiong')
@@ -12,4 +18,5 @@ st.markdown('- **[:computer: CodeMaxGPT](./CodeMaxGPT)**')
 st.markdown("- **[:frame_with_picture: DALL·E Image Generator (coming soon)](./DALL·E_Image_Generator_(coming_soon))**: \
              Currently unavailable :no_entry: due to an issue with the validity of API keys :key: for the DALL·E model. Awaiting resolution from OpenAI.")
 
-st.image('assets/cover-page.jpg')
+st.text('')
+st.image('assets/cover_page.jpg')

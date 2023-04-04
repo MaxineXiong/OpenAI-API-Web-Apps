@@ -106,6 +106,12 @@ class ChatGPTBot:
 
 
 def main():
+    # set page config
+    st.set_page_config(page_title="Talk To GPT-3.5",
+                       page_icon=":microphone:",
+                       layout='centered',
+                       initial_sidebar_state="auto")
+
     st.title('Welcome to Talk To GPT-3.5')
     st.subheader("Emplowering Conversations: A ChatBot You Can Message Or Talk To, Powered By OpenAI's GPT 3.5 Turbo Model and Whisper Model :robot_face:")
 
