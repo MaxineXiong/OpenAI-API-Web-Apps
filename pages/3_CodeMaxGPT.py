@@ -202,7 +202,8 @@ class App:
 
     def run(self):
         st.title('Introducing CodeMaxGPT')
-        st.subheader("Simplifying Coding With CoderMaxGPT-3.5: Your AI Coding Assistant For Easy Code Generation, Refactoring, and Documentation :computer:")
+        st.header('Code Big, Even If You Are Junior!')
+        st.subheader("Simplifying Coding With CodeMaxGPT-3.5: Your AI Coding Assistant For Easy Code Generation, Refactoring, and Documentation :computer:")
 
         cl1, cl2 = st.columns([1, 2])
         # Enter API Key
