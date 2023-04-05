@@ -151,10 +151,10 @@ class App:
 
 
     def uploading_code(self, col1, user_message):
-        upload_method = col1.selectbox(label = 'How would you prefer to upload your code?', options = ['Not now', 'Paste my code', 'Upload my code script'])
+        upload_method = col1.selectbox(label = 'How would you prefer to upload your code?', options = ['Not now', 'Enter/Paste my code', 'Upload my code script'])
         if upload_method == 'Not now':
             self.send_no_code(col1, user_message)
-        if upload_method == 'Paste my code':
+        if upload_method == 'Enter/Paste my code':
             c1, c2 = st.columns([2, 9])
             # input field for file name
             file_name = c1.text_input('File Name', placeholder = 'eg. index.html', help = 'Please provide the filename, or leave it blank if not applicable.')
