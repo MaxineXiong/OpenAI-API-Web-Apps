@@ -116,7 +116,7 @@ class App:
 
     def send_no_code(self, col1, user_message):
         if user_message != '':
-            c1, c2 = col1.columns([8.5, 1])
+            c1, c2 = col1.columns([8.7, 1])
             if c2.button('Send'):
                 prompt = user_message
                 # send prompt
@@ -137,7 +137,7 @@ class App:
             # print out the code
             prompt = user_message + '\n' + prompt_code
             # col2.text(prompt)
-            c1_, c2_ = c2.columns([13.2, 1])
+            c1_, c2_ = c2.columns([14.2, 1])
             if c2_.button('Send'):
                 # store uploaded code
                 if file_name != '':
