@@ -137,7 +137,7 @@ class App:
             # print out the code
             prompt = user_message + '\n' + prompt_code
             # col2.text(prompt)
-            c1_, c2_ = c2.columns([14.5, 1])
+            c1_, c2_ = c2.columns([14.2, 1])
             if c2_.button('Send'):
                 # store uploaded code
                 if file_name != '':
