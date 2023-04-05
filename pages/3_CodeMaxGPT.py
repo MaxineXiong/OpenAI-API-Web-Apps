@@ -116,7 +116,7 @@ class App:
 
     def send_no_code(self, col1, user_message):
         if user_message != '':
-            c1, c2 = col1.columns([7.7, 1])
+            c1, c2 = col1.columns([7.9, 1])
             if c2.button('Send'):
                 prompt = user_message
                 # send prompt
