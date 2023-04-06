@@ -236,8 +236,8 @@ class App:
                 # input field for repo url
                 repo_url = col1.text_input('Enter HTTPS URL of a remote GitHub repo',
                                           placeholder = 'https://github.com/<user>/<repo>.git',
-                                          help = 'If you desire to generate a README for a particular GitHub repository, \
-                                          please input the HTTPS URL of that repo in the field below. \
+                                          help = 'If you intend to generate a README for a particular GitHub repository, \
+                                          please input the [HTTPS URL](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories) of that repo in the field below. \
                                           Alternatively, if you wish to generate one for the uploaded program, leave the field blank.')
                 if repo_url == '':
                     prompt = "Generate the GitHub README for the entire program."
