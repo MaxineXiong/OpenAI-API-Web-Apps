@@ -226,7 +226,7 @@ class App:
             col1, col2 = st.columns([1, 1.25])
 
             # Select an action
-            action = col1.selectbox(label = 'Select a desired action for your code',
+            action = col1.selectbox(label = 'How can the bot assist with your code?',
                                     options = ['Specify Custom Requirements', 'Refactor Code',  \
                                                'Refactor Code to OOP', 'Comment Code', 'Generate GitHub README'], index = 0)
 
