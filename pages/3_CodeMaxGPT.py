@@ -280,7 +280,6 @@ class App:
                 if action == 'Specify Custom Requirements':
                     user_message = col1.text_area('Specify your requirements here',
                                                   placeholder = "Try:\nBuild an app in Python where users... \
-                                                                \nDebug the code... \
                                                                 \nWrite a documentation page for the entire program... \
                                                                 \nMake the code more elegant... \
                                                                 \nWrite a test program for the code using unittest...",
