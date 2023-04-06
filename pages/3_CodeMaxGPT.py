@@ -227,7 +227,7 @@ class App:
 
             # Select an action
             action = col1.selectbox(label = 'How can the bot assist with your code?',
-                                    options = ['Specify Custom Requirements', 'Refactor Code',  \
+                                    options = ['Specify Custom Requirements', 'Debug Code', 'Refactor Code',  \
                                                'Refactor Code to OOP', 'Comment Code', 'Generate GitHub README'], index = 0)
 
             if action == 'Generate GitHub README':
@@ -285,6 +285,8 @@ class App:
                                                                 \nMake the code more elegant... \
                                                                 \nWrite a test program for the code using unittest...",
                                                   value = '', height = 200)
+                if action == 'Debug Code':
+                    user_message = "Debug the code. Rewrite the code in a code block."
                 if action == 'Refactor Code':
                     user_message = "Refactor the code in a more efficient way. Rewrite the code in a code block."
                 if action == 'Refactor Code to OOP':
