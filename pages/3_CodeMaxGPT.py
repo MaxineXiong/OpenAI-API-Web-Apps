@@ -286,7 +286,7 @@ class App:
                                                                 \nWrite a test program for the code using unittest...",
                                                   value = '', height = 200)
                 if action == 'Debug Code':
-                    user_message = "Debug the code. Rewrite the code in a code block."
+                    user_message = "Debug the code. Specify where went wrong and what caused the error. Rewrite the code in a code block."
                 if action == 'Refactor Code':
                     user_message = "Refactor the code in a more efficient way. Rewrite the code in a code block."
                 if action == 'Refactor Code to OOP':
