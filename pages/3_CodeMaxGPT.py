@@ -283,7 +283,7 @@ class App:
                                                                 \nWrite a documentation page for the entire program... \
                                                                 \nMake the code more elegant... \
                                                                 \nWrite a test program for the code using unittest...",
-                                                  value = '', height = 200)
+                                                  value = '', height = 180)
                 if action == 'Debug Code':
                     user_message = "Debug the code. Clarify where went wrong and what caused the error. Rewrite the code in a code block."
                 if action == 'Refactor Code':
