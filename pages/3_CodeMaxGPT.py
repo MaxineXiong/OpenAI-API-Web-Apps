@@ -158,7 +158,7 @@ class App:
             c1, c2 = st.columns([2, 9])
             # input field for file name
             file_name = c1.text_input('File Name', placeholder = 'eg. index.html', help = 'Please provide the filename, or leave it blank if not applicable.')
-            # send manually pasted code
+            # send manually entered/pasted code
             self.send_code(c1, c2, user_message, file_name, '')
         if upload_method == 'Upload my code script':
             # file uploader
@@ -228,7 +228,8 @@ class App:
             # Select an action
             action = col1.selectbox(label = 'How can the bot assist with your code?',
                                     options = ['Specify Custom Requirements', 'Debug Code', 'Refactor Code',  \
-                                               'Refactor Code to OOP', 'Comment Code', 'Generate GitHub README'], index = 0)
+                                               'Refactor Code to OOP', 'Comment Code', 'Generate GitHub README', \
+                                               'Suggest a Solution For a Coding Challenge'], index = 0)
 
             if action == 'Generate GitHub README':
                 # display code uploaded
@@ -276,6 +277,31 @@ class App:
                                 key="ace-readme",
                                 height=500
                              )
+
+            elif action == 'Suggest a Solution For a Coding Challenge':
+                # coding langauges to solve problems
+                coding_langs = ['Python', 'Java', 'MySQL', 'MS SQL Server', 'Oracle SQL', 'JavaScript',
+                               'C#', 'C', 'C++', 'Ruby', 'Swift', 'Go', 'Scala', 'Kotlin', 'Rust',
+                               'PHP', 'TypeScript', 'Racket', 'Erlang', 'Elixir', 'Dart']
+                c1, c2 = col1.columns([1, 3])
+                # text area for inputing coding challenge
+                coding_problem = c2.text_area('Input the coding challenge',
+                                                placeholder = "Describe the challenge in detail:\neg. Create an algorithm that returns a list of prime numbers up until the given number x. \
+                                                              \nOR\nPaste the website URL of the coding problem:\neg. https://leetcode.com/problems/number-of-enclaves/",
+                                                value = '', height = 170)
+                # language selection
+                lang_selected = c1.selectbox("Language Mode", options = coding_langs, index = 0)
+                if 'SQL' in lang_selected:
+                    prompt = 'Solve the problem in {}:\n'.format(lang_selected) + coding_problem + '\nDisplay the solution in a code block.'
+                else:
+                    prompt = 'Solve the problem in {}:\n'.format(lang_selected) + coding_problem + '\nDisplay the solution in a code block.\nAlso, Clarify the time and space complexity of the solution.'
+                # send button
+                c3, c4 = col1.columns([7.2, 1])
+                if coding_problem != '':
+                    if c4.button('Send'):
+                        # send prompt
+                        self.send_prompt(prompt)
+
             else:
                 if action == 'Specify Custom Requirements':
                     user_message = col1.text_area('Specify your requirements here',
