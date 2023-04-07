@@ -294,7 +294,7 @@ class App:
                 if 'SQL' in lang_selected:
                     prompt = 'Solve the problem in {}:\n'.format(lang_selected) + coding_problem + '\nExplain the solution and display it in a code block.'
                 else:
-                    prompt = 'Solve the problem in {}:\n'.format(lang_selected) + coding_problem
+                    prompt = 'Solve the problem in {}:\n'.format(lang_selected) + coding_problem \
                              + '\nExplain the solution and display it in a code block.\nAlso, Clarify the time and space complexity of the solution.'
                 # send button
                 c3, c4 = col1.columns([7.2, 1])
