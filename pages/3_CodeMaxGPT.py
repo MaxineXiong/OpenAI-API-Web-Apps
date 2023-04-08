@@ -318,7 +318,7 @@ class App:
                 if action == 'Refactor Code to OOP':
                     user_message = "Refactor the code in a more efficient way. Rewrite the code to OOP in a code block."
                 if action == 'Comment Code':
-                    user_message = 'Add comments to the code.'
+                    user_message = 'Add comments to the code line by line.'
 
                 # choose a code uploading method
                 self.uploading_code(col1, user_message)
