@@ -10,6 +10,8 @@ import re
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 class ChatGPTBot:
     def __init__(self, api_key):
@@ -115,7 +117,7 @@ class App:
             # get html without opening browser
             chrome_options = Options()
             chrome_options.add_argument("--headless")
-            driver = webdriver.Chrome(chrome_options = chrome_options)
+            driver = self.get_driver()
             try:
                 # load prompts from https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv
                 driver.get('https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv')
@@ -131,6 +133,11 @@ class App:
                 st.session_state['prompts'] = df
             except:
                 st.error('Unable to load the built-in prompts. Please check [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv) for more details.')
+
+
+    @st.experimental_singleton
+    def get_driver(self):
+        return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = options)
 
 
     def transform_prompt(self, x):
