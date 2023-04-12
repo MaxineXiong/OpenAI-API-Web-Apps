@@ -92,22 +92,14 @@ class ChatGPTBot:
         return transcript['text']
 
 
-@st.experimental_singleton
-def get_driver():
-    return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = chrome_options)
-chrome_options = Options()
-chrome_options.add_argument("--headless")
-driver = get_driver()
-
-
 
 class App:
     def __init__(self):
         # set page config
-        st.set_page_config(page_title="Talk To GPT-3.5",
-                           page_icon=":microphone:",
-                           layout='centered',
-                           initial_sidebar_state="auto")
+        # st.set_page_config(page_title="Talk To GPT-3.5",
+        #                    page_icon=":microphone:",
+        #                    layout='centered',
+        #                    initial_sidebar_state="auto")
         # remove all audio files
         for file in glob.glob('./*.wav'):
             os.remove(file)
@@ -257,5 +249,17 @@ class App:
 
 
 if __name__ == '__main__':
+    st.set_page_config(page_title="Talk To GPT-3.5",
+                       page_icon=":microphone:",
+                       layout='centered',
+                       initial_sidebar_state="auto")
+
+    @st.experimental_singleton
+    def get_driver():
+        return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = chrome_options)
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    driver = get_driver()
+
     app = App()
     app.run()
