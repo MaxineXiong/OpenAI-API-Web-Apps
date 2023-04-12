@@ -91,7 +91,7 @@ class ChatGPTBot:
 
 
 
-class App:
+class ChatApp:
     def __init__(self):
         # set page config
         st.set_page_config(page_title="Talk To GPT-3.5",
@@ -250,5 +250,5 @@ class App:
 
 
 if __name__ == '__main__':
-    app = App()
-    app.run()
+    chat_app = ChatApp()
+    chat_app.run()
