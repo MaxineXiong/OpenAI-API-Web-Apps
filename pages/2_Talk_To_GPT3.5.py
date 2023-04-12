@@ -115,8 +115,8 @@ class App:
         # load up-to-date built-in prompts
         if 'prompts' not in st.session_state:
             # get html without opening browser
-            chrome_options = Options()
-            chrome_options.add_argument("--headless")
+            self.chrome_options = Options()
+            self.chrome_options.add_argument("--headless")
             driver = self.get_driver()
             try:
                 # load prompts from https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv
@@ -137,7 +137,7 @@ class App:
 
     @st.experimental_singleton
     def get_driver(_self):
-        return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = options)
+        return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = self.chrome_options)
 
 
     def transform_prompt(self, x):
