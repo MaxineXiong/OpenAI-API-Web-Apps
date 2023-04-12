@@ -326,7 +326,7 @@ class App:
                                     feedback on these issues by pointing out the line numbers and briefly explaining \
                                     the problem, and to suggest how to improve. I'll send code for you to review, \
                                     and you will provide feedback on any issues and improvements you identify, \
-                                    using clear and concise language."
+                                    using clear and concise language. Remember to output the updated code in a code block."
 
                 # choose a code uploading method
                 self.uploading_code(col1, user_message)
