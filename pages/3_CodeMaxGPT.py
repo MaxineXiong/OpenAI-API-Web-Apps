@@ -228,7 +228,8 @@ class App:
             # Select an action
             action = col1.selectbox(label = 'How can the bot assist with your code?',
                                     options = ['Specify Custom Requirements', 'Debug Code', 'Refactor Code',  \
-                                               'Refactor Code to OOP', 'Comment Code', 'Generate GitHub README', \
+                                               'Refactor Code to OOP', 'Comment Code', 'Explain Code', \
+                                               'Review Code', 'Generate GitHub README', \
                                                'Suggest a Solution For a Coding Challenge'], index = 0)
 
             if action == 'Generate GitHub README':
@@ -319,6 +320,14 @@ class App:
                     user_message = "Refactor the code in a more efficient way. Rewrite the code to OOP in a code block."
                 if action == 'Comment Code':
                     user_message = 'Add comments to the code line by line.'
+                if action == 'Explain Code':
+                    user_message = 'Document the code.'
+                if action == 'Review Code':
+                    user_message = "Act as a Code Review Helper. Imagine that you are reviewing someone's code \
+                                    and you have identified some issues. Your task is to provide feedback on these \
+                                    issues by pointing out the line numbers and briefly explaining the problem in \
+                                    one sentence. I'll send code for you to review, and you will provide feedback \
+                                    on any issues you identify, using clear and concise langauge."
 
                 # choose a code uploading method
                 self.uploading_code(col1, user_message)
