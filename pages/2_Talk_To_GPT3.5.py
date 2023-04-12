@@ -257,7 +257,7 @@ if __name__ == '__main__':
         return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = chrome_options)
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--disable-gpu')
     driver = get_driver()
 
     app = App()
