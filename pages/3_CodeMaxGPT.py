@@ -324,7 +324,7 @@ class App:
                     user_message = "Act as a Code Review Helper. Imagine that you are reviewing someone's code \
                                     and you have identified some issues and improvements. Your task is to provide \
                                     feedback on these issues by pointing out the line numbers and briefly explaining \
-                                    the problem and suggesting how to improve. I'll send code for you to review, \
+                                    the problem, and to suggest how to improve. I'll send code for you to review, \
                                     and you will provide feedback on any issues and improvements you identify, \
                                     using clear and concise langauge."
 
