@@ -319,9 +319,9 @@ class App:
                 if action == 'Refactor Code to OOP':
                     user_message = "Refactor the code in a more efficient way. Rewrite the code to OOP in a code block."
                 if action == 'Comment Code':
-                    user_message = 'Add comments to the code line by line.'
+                    user_message = 'Add comments to the code line by line inside a code block.'
                 if action == 'Explain Code':
-                    user_message = 'Document the code line by line'
+                    user_message = 'Document the code line by line with code snippet attached for each part.'
                 if action == 'Review Code':
                     user_message = "Act as a Code Review Helper. Imagine that you are reviewing someone's code \
                                     and you have identified some issues. Your task is to provide feedback on these \
