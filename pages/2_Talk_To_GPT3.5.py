@@ -254,7 +254,7 @@ if __name__ == '__main__':
                        layout='centered',
                        initial_sidebar_state="auto")
 
-    @st.experimental_singleton
+    @st.cache_resource
     def get_driver():
         return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = chrome_options)
     chrome_options = Options()
