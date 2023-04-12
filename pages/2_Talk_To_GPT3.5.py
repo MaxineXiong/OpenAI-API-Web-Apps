@@ -95,11 +95,6 @@ class ChatGPTBot:
 
 class App:
     def __init__(self):
-        # set page config
-        # st.set_page_config(page_title="Talk To GPT-3.5",
-        #                    page_icon=":microphone:",
-        #                    layout='centered',
-        #                    initial_sidebar_state="auto")
         # remove all audio files
         for file in glob.glob('./*.wav'):
             os.remove(file)
@@ -114,11 +109,13 @@ class App:
             st.session_state['user-speak'] = []
         # load up-to-date built-in prompts
         if 'prompts' not in st.session_state:
+            driver.get('https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv')
+            st.code(driver.page_source)
             # get html without opening browser
             try:
                 # load prompts from https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv
-                driver.get('https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv')
-                html = driver.page_source
+                # driver.get('https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv')
+                # html = driver.page_source
                 # read html to get dataframe
                 dfs = pd.read_html(html)
                 df = dfs[0]
@@ -249,6 +246,7 @@ class App:
 
 
 if __name__ == '__main__':
+    # set page config
     st.set_page_config(page_title="Talk To GPT-3.5",
                        page_icon=":microphone:",
                        layout='centered',
