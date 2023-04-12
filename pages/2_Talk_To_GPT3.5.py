@@ -9,9 +9,9 @@ from gtts import gTTS
 import re
 import pandas as pd
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
 
 class ChatGPTBot:
     def __init__(self, api_key):
@@ -95,6 +95,11 @@ class ChatGPTBot:
 
 class App:
     def __init__(self):
+        # set page config
+        st.set_page_config(page_title="Talk To GPT-3.5",
+                           page_icon=":microphone:",
+                           layout='centered',
+                           initial_sidebar_state="auto")
         # remove all audio files
         for file in glob.glob('./*.wav'):
             os.remove(file)
@@ -246,19 +251,13 @@ class App:
 
 
 if __name__ == '__main__':
-    # set page config
-    st.set_page_config(page_title="Talk To GPT-3.5",
-                       page_icon=":microphone:",
-                       layout='centered',
-                       initial_sidebar_state="auto")
-
-    @st.cache_resource
-    def get_driver():
-        return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = chrome_options)
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument('--disable-gpu')
-    driver = get_driver()
+    firefoxOptions = Options()
+    firefoxOptions.add_argument("--headless")
+    service = Service(GeckoDriverManager().install())
+    driver = webdriver.Firefox(
+        options=firefoxOptions,
+        service=service,
+    )
 
     app = App()
     app.run()
