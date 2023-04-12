@@ -92,6 +92,14 @@ class ChatGPTBot:
         return transcript['text']
 
 
+@st.experimental_singleton
+def get_driver():
+    return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = options)
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+driver = get_driver()
+
+
 
 class App:
     def __init__(self):
@@ -115,9 +123,6 @@ class App:
         # load up-to-date built-in prompts
         if 'prompts' not in st.session_state:
             # get html without opening browser
-            chrome_options = Options()
-            chrome_options.add_argument("--headless")
-            driver = self.get_driver(chrome_options)
             try:
                 # load prompts from https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv
                 driver.get('https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv')
@@ -133,11 +138,6 @@ class App:
                 st.session_state['prompts'] = df
             except:
                 st.error('Unable to load the built-in prompts. Please check [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv) for more details.')
-
-
-    @st.experimental_singleton
-    def get_driver(_self, options):
-        return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = options)
 
 
     def transform_prompt(self, x):
