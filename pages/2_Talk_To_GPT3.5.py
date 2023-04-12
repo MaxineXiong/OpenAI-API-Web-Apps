@@ -129,7 +129,9 @@ def main():
     # initialize chatbot
     bot = ChatGPTBot(KEY)
 
-    st.markdown("*Tip: To clear chat history, please click on the ☰ icon located at the top right corner of the screen, and then select __'Clear cache'__.*")
+    st.markdown("""*Pro tip: If you wish to initiate a new conversation, you can either \
+                   refresh the webpage or request the bot to disregard all previous instructions \
+                   by inputting the command, "ignore all previous instructions before this one".*""")
 
     # Two Expanders
     st.text('')
