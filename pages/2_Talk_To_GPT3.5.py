@@ -136,7 +136,7 @@ class App:
 
 
     @st.experimental_singleton
-    def get_driver(self):
+    def get_driver(_self):
         return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = options)
 
 
