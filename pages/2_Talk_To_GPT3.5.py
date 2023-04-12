@@ -8,10 +8,8 @@ from datetime import datetime
 from gtts import gTTS
 import re
 import pandas as pd
-from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.firefox.service import Service
-from webdriver_manager.firefox import GeckoDriverManager
+import requests
+from bs4 import BeautifulSoup
 
 class ChatGPTBot:
     def __init__(self, api_key):
@@ -114,13 +112,14 @@ class App:
             st.session_state['user-speak'] = []
         # load up-to-date built-in prompts
         if 'prompts' not in st.session_state:
-            driver.get('https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv')
-            st.code(driver.page_source)
-            # get html without opening browser
             try:
+                headers = {'User-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0'}
                 # load prompts from https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv
-                # driver.get('https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv')
-                # html = driver.page_source
+                r = requests.get('https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv', headers = headers)
+                c = r.content
+                soup = BeautifulSoup(c, 'html.parser')
+                # get html
+                html = soup.prettify()
                 # read html to get dataframe
                 dfs = pd.read_html(html)
                 df = dfs[0]
@@ -251,13 +250,5 @@ class App:
 
 
 if __name__ == '__main__':
-    firefoxOptions = Options()
-    firefoxOptions.add_argument("--headless")
-    service = Service(GeckoDriverManager().install())
-    driver = webdriver.Firefox(
-        options=firefoxOptions,
-        service=service,
-    )
-
     app = App()
     app.run()
