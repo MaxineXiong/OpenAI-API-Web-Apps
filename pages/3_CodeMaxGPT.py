@@ -321,7 +321,7 @@ class App:
                 if action == 'Comment Code':
                     user_message = 'Add comments to the code line by line. Display all the comments and code inside a code block.'
                 if action == 'Explain Code':
-                    user_message = 'Document the code line by line with code snippet attached for each part.'
+                    user_message = 'Document the code line by line. Attach relevant code snippet(s) below each explanation.'
                 if action == 'Review Code':
                     user_message = "Act as a Code Review Helper. Imagine that you are reviewing someone's code \
                                     and you have identified some issues. Your task is to provide feedback on these \
