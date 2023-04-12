@@ -94,7 +94,7 @@ class ChatGPTBot:
 
 @st.experimental_singleton
 def get_driver():
-    return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = options)
+    return webdriver.Chrome(service = Service(ChromeDriverManager().install()), options = chrome_options)
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 driver = get_driver()
