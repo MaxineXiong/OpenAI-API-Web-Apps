@@ -194,7 +194,7 @@ class ChatApp:
                 # select box for prompts
                 prompt_act_selected = st.selectbox(label = 'Choose a built-in prompt (role-based)',
                                                    options = prompts, index = 0,
-                                                   help = "The collection of built-in prompts was imported from \
+                                                   help = "The collection of built-in prompts were imported from \
                                                            [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts).")
                 # initial value for text message field
                 if prompt_act_selected == 'None':
@@ -204,7 +204,7 @@ class ChatApp:
                     initial_value = df_prompts.loc[prompt_id, 'prompt']
                 # populate text message field with initial value
                 user_message_text = st.text_area('Send text message',
-                                                  placeholder = "Type your text message here and hit the 'Enter' key",
+                                                  placeholder = "Type your text message here and press Ctrl+Enter to submit",
                                                   value = initial_value, height = 120)
                 # send text message to bot
                 bot.chatting(user_message_text, 'text')
