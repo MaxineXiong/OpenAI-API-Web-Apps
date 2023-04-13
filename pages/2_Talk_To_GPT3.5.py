@@ -192,7 +192,7 @@ class ChatApp:
                 prompts = sorted(list(df_prompts['act']))
                 prompts = tuple(['None'] + prompts)
                 # select box for prompts
-                prompt_act_selected = st.selectbox(label = 'Select a built-in prompt',
+                prompt_act_selected = st.selectbox(label = 'Choose a built-in prompt (role-based)',
                                                    options = prompts, index = 0,
                                                    help = "The collection of built-in prompts was imported from \
                                                            [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts).")
