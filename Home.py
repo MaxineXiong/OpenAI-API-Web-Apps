@@ -10,7 +10,7 @@ st.title("WELCOME TO OPENAI WEB SERVICES!")
 st.header(":rocket: An Unofficial Platform For Custom Web Applications Powered By OpenAI APIs")
 st.subheader(':sunglasses: By Maxine Xiong')
 
-st.markdown('**Please feel free to explore the following two web apps or share your feedback to my email <maxinexiong2@gmail.com>. \
+st.markdown('**Please feel free to explore the following web apps or share your feedback to my email <maxinexiong2@gmail.com>. \
              More exciting OpenAI applications are coming on the way, so stay tuned! :clinking_glasses:**')
 
 st.markdown('- **[:microphone: Talk To GPT-3.5](./Talk_To_GPT3.5)**')
