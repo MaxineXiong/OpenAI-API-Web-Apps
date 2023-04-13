@@ -321,12 +321,10 @@ class App:
                 if action == 'Comment Code':
                     user_message = 'Add comments to the code line by line. Display all the comments and code inside a code block.'
                 if action == 'Review Code':
-                    user_message = "Act as a Code Review Helper. Imagine that you are reviewing someone's code \
-                                    and you have identified some issues and improvements. Your task is to provide \
-                                    feedback on these issues by pointing out the line numbers and briefly explaining \
-                                    the problem, and to suggest how to improve. I'll send code for you to review, \
-                                    and you will provide feedback on any issues and improvements you identify, \
-                                    using clear and concise language. You will also display the updated code inside a code block."
+                    user_message = "Review the code. Provide feedback on any issues and improvements you identify \
+                                    by pointing out the line numbers and briefly explaining the problem, and to \
+                                    suggest how to improve, using clear and concise language. Also, display the \
+                                    updated code inside a code block."
 
                 # choose a code uploading method
                 self.uploading_code(col1, user_message)
