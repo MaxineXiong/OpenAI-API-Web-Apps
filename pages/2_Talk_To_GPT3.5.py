@@ -180,7 +180,7 @@ class ChatApp:
             bot = ChatGPTBot(KEY)
 
             st.markdown("""*Pro tip: If you wish to initiate a new conversation, you can either \
-                           refresh the webpage or request the bot to disregard all previous instructions \
+                           refresh the webpage or request the bot to discard all previous instructions \
                            by inputting the command, "ignore all previous instructions before this one".*""")
 
             # Two Expanders
