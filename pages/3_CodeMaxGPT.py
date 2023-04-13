@@ -322,9 +322,9 @@ class App:
                     user_message = 'Add comments to the code line by line. Display all the comments and code inside a code block.'
                 if action == 'Review Code':
                     user_message = "Review the code. Provide feedback on any issues and improvements you identify \
-                                    by pointing out the line numbers and briefly explaining the problem, and to \
-                                    suggest how to improve, using clear and concise language. Also, display the \
-                                    updated code inside a code block."
+                                    by pointing out the line numbers and briefly explaining the problem. Suggest \
+                                    how to improve using clear and concise language. Also, display the updated code \
+                                    inside a code block."
 
                 # choose a code uploading method
                 self.uploading_code(col1, user_message)
