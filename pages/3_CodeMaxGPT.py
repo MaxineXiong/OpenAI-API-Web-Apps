@@ -321,7 +321,7 @@ class App:
                 if action == 'Comment Code':
                     user_message = 'Add comments to the code line by line. Display all the comments and code inside a code block.'
                 if action == 'Review Code':
-                    user_message = "Review the code. Provide feedback on any issues and improvements you identify \
+                    user_message = "Review the code. Provide feedback on any issues you identify \
                                     by pointing out the line numbers and briefly explaining the problem. Suggest \
                                     how to improve. Display the updated code inside a code block."
 
