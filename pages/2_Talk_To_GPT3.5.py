@@ -219,7 +219,8 @@ class ChatApp:
                     st.error('Please ensure that all content has been deleted from the text message field')
                 else:
                     # record user's voice
-                    audio_bytes = audio_recorder(pause_threshold = 3.0)  # stop after pausing for 3 seconds
+                    audio_bytes = audio_recorder(neutral_color = '#FFFFFF',
+                                                 pause_threshold = 3.0)  # stop after pausing for 3 seconds
                     if audio_bytes:
                         # transcribe voice to get user message
                         user_message_voice = bot.transcribe_voice(audio_bytes = audio_bytes)
