@@ -190,14 +190,14 @@ class ChatApp:
                 df_prompts = st.session_state['prompts']
                 # get list of prompts
                 prompts = sorted(list(df_prompts['act']))
-                prompts = tuple(['None'] + prompts)
+                prompts = tuple(['You want the bot to act as...'] + prompts)
                 # select box for prompts
-                prompt_act_selected = st.selectbox(label = 'Choose a built-in prompt (role-based)',
+                prompt_act_selected = st.selectbox(label = 'Choose a built-in prompt (optional)',
                                                    options = prompts, index = 0,
                                                    help = "The collection of built-in prompts were imported from \
                                                            [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts).")
                 # initial value for text message field
-                if prompt_act_selected == 'None':
+                if prompt_act_selected == 'You want the bot to act as...':
                     initial_value = ''
                 else:
                     prompt_id = list(df_prompts[df_prompts.act == prompt_act_selected].index)[0]
