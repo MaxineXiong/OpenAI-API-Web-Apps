@@ -19,4 +19,4 @@ st.markdown("- **[:frame_with_picture: DALL·E Image Generator (coming soon)](./
              Currently unavailable :no_entry: due to an issue with the validity of API keys :key: for the DALL·E model. Awaiting resolution from OpenAI.")
 
 st.text('')
-st.image('assets/cover_page.jpg')
+st.image('assets/cover_page.gif')
