@@ -66,7 +66,7 @@ class ChatGPTBot:
         st.audio(bot_audio_bytes, format = 'audio/wav')
 
 
-    # Make the bot talk in either Chinese or English
+    # Chat with the bot. Make the bot talk in either Chinese or English
     def chatting(self, user_message, text_or_speak):
         if user_message != '':
             # Get the latest message history stored in streamlit session state
@@ -104,7 +104,7 @@ class ChatGPTBot:
                 self.saying(bot_message, 'en')
 
 
-    # Transcribe speech to text
+    # Transcribe user's speech to text
     def transcribe_voice(self, audio_bytes, model = 'whisper-1'):
         # Write audio_bytes into a new WAV file
         filename = 'user-{}.wav'.format(datetime.now().strftime('%Y-%m-%d-%H-%M-%S'))
