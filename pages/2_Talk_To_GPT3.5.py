@@ -25,14 +25,14 @@ class ChatGPTBot:
             st.session_state['message_history'] = []
 
 
-    # Send user's message to GPT model and receive bot's response
-    # Document and update the message history between user and bot
+    # The bot sends the user's message to GPT model and receives API response
+    # Document and update the message history between the user and the bot
     def chat_with_gpt(self,
                       user_message,
                       model = "gpt-3.5-turbo",
                       role = 'user',
                       message_history = []):
-        # Append the request message from users to message_history
+        # Assemble a request using user's message and append it to message_history
         request = {"role": role, "content": user_message}
         message_history.append(request)
 
@@ -44,7 +44,7 @@ class ChatGPTBot:
 
         # Extract bot's message from the API response
         bot_message = completion['choices'][0]['message']['content']
-        # Append the response message from GPT model to message_history
+        # Assemble a response using bot's message and append it to message_history
         response = {"role": 'assistant', "content": bot_message}
         message_history.append(response)
 
