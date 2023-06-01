@@ -27,7 +27,7 @@ class CoderBot:
                      model = "gpt-3.5-turbo",
                      role = 'user'):
         if prompt != '':
-            # Append the request message from users to message_history
+            # Assemble a request using the user's message and append it to the message history
             request = {"role": role, "content": prompt}
             st.session_state['message_history'].append(request)
 
@@ -40,7 +40,7 @@ class CoderBot:
 
             # Extract bot's message from the API response
             bot_message = completion['choices'][0]['message']['content']
-            # Append the response message from GPT model to message_history
+            # Assemble a response using the bot's message and append it to the message history
             response = {"role": 'assistant', "content": bot_message}
             st.session_state['message_history'].append(response)
 
