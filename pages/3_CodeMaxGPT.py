@@ -20,7 +20,7 @@ class CoderBot:
             st.session_state['bot_messages'] = {}
 
 
-    # Send user's prompt to GPT model and receive bot's response
+    # The bot sends user's prompt to GPT model and receives API response
     # Document and update the message history between the user and the bot in session state
     def chatting_gpt(self,
                      prompt,
@@ -89,7 +89,7 @@ class App:
                 # Display the names of the code files uploaded on the web page
                 if file != 'Original Code':
                     st.text('[{} uploaded]'.format(file))
-        # Send user's prompt to the bot for chat processing
+        # The bot sends user's prompt to GPT model for chat processing
         self.bot.chatting_gpt(prompt = prompt)
 
 
@@ -162,8 +162,9 @@ class App:
         code_language = self.get_code_language(file_name, 'python')
         # Get user's code in string
         code = self.get_code(c1, c2, initial_code, code_language)
-        # Construct the prompt containing the code
+        # The 'Send' button appears only when user has uploaded their code
         if code != '':
+            # Construct the prompt containing the code
             if file_name == '':
                 prompt_code = 'Here is the code:\n' + code
             else:
@@ -192,17 +193,18 @@ class App:
     def uploading_code(self, col1, user_message):
         # Dropdown box for selecting a method to upload code
         upload_method = col1.selectbox(label = 'How would you prefer to upload your code?', options = ['Not now', 'Enter / paste my code', 'Upload my code script'])
-        # If the user choose not to upload the code now, send the user's text prompt only
+        # If the user choose not to upload the code now...
         if upload_method == 'Not now':
+            # send the user's text prompt only to the bot
             self.send_no_code(col1, user_message)
-        # If the user choose to enter the code manually
+        # If the user choose to enter or paste the code manually...
         if upload_method == 'Enter / paste my code':
             c1, c2 = st.columns([2, 9])
             # Display a text input field for file name
             file_name = c1.text_input('File Name', placeholder = 'eg. index.html', help = 'Please provide the filename, or leave it blank if not applicable.')
-            # Upload the manually entered/pasted code
+            # Send the user's text prompt and the manually entered/pasted code together to the bot
             self.send_code(c1, c2, user_message, file_name, '')
-        # If the user choose to input the code by uploading a code script
+        # If the user choose to input the code by uploading a code script...
         if upload_method == 'Upload my code script':
             # Display a file uploader
             uploaded_file = st.file_uploader("Upload a file from your local computer")
@@ -212,7 +214,8 @@ class App:
                 # Get the script code in string
                 stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
                 script_code = stringio.read()
-                # Paste the script code to code editor and upload
+                # Automatically paste the script code to the code editor
+                # and send the user's text prompt and code input together to the bot
                 c1, c2 = st.columns([2, 9])
                 self.send_code(c1, c2, user_message, file_name, script_code)
 
@@ -228,7 +231,7 @@ class App:
                 with col2.expander(label = file, expanded = False):
                     # Determine the code language for the code editor
                     code_language = self.get_code_language(file, 'plain_text')
-                    # Display the uploaded code in code editor
+                    # Display the uploaded code in code editor inside each Expander
                     st_ace(
                             value = code,
                             language = code_language,
@@ -270,7 +273,7 @@ class App:
         # If API key is not entered
         if KEY == '':
             st.error('Please enter your API key to start the service!')
-        # If API key is not entered
+        # If API key is entered
         else:
             # Initialize the bot with the provided API key
             self.bot = CoderBot(KEY)
@@ -395,7 +398,7 @@ class App:
             st.text('')
             # Display bot's historical responses
             if len(st.session_state['bot_messages']) > 0:
-                # Iterate over the historical bot's messages in reverse order
+                # Iterate over the historical bot's messages in reverse order, from newest to oldest
                 for key, value in list(st.session_state['bot_messages'].items())[::-1]:
                     # Display each key as the a colored heading
                     st.markdown("<span style='color:#FF4B4B'><strong>" + key + "</strong></span>", unsafe_allow_html=True)
