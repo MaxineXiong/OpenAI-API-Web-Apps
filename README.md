@@ -93,7 +93,7 @@ The description of each file and folder in the repository is as follows:
     - **4_DALL·E_Image_Generator_(coming_soon).py**: Python script for the **DALL·E Image Generator** web application (coming soon).
 * **Home.py**: This is a Python script for the home page of the Streamlit web applications. It contains code related to the navigation between the three web applications.
 * **packages.txt**: The file manages the project dependencies and is necessary for deploying the web applications on _Streamlit Cloud_.
-* **requirements.txt**: This file lists all the required Python modules and packages. It is also necessary for the deployment of the web application on _Streamlit Cloud_. It ensures that the required dependencies are installed when deploying the application.
+* **requirements.txt**: This file lists all the required Python modules and packages. It is also necessary for the deployment of the web applications on _Streamlit Cloud_. It ensures that the required dependencies are installed when deploying the applications.
 * **README.md**: Provides an overview of this repository.
 * **LICENSE**: The license file for the project.
 
