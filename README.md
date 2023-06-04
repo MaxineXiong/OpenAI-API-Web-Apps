@@ -120,9 +120,12 @@ Below are two GIF images that demonstrate the usage of the **Talk to GPT-3.5** a
     <br>Interacting through text messages
 </p>
 
-[GIF 2]
+###
 
-<p align='center'>Interacting through speech input</p>
+<p align='center'>
+    <img width=600 src="https://github.com/MaxineXiong/OpenAI-API-Web-Apps/assets/55864839/9d975dc5-5d38-4ee3-8cf2-085249f166fb">
+    <br>Interacting through speech input
+</p>
 
 ### **Get Started with CodeMaxGPT**
 
