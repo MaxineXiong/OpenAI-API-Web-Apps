@@ -107,9 +107,10 @@ The web applications are currently hosted on *Streamlit Cloud*. To access the ap
 To use the **Talk to GPT-3.5** application, follow these steps:
 
 1. Visit the [**Talk to GPT-3.5 on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5).
-2. You can start interacting with the chatbot using either the "MESSAGE BOT" or "TALK TO BOT" options.
-3. For text input, click on the "MESSAGE BOT" expander, select a built-in prompt from the dropdown menu, and press CTRL + Enter to submit. The chatbot will respond with a generated message. You can continue the conversation by entering your own messages.
-4. For speech input, make sure the text message input field is cleared, then click on the "TALK TO BOT" expander, click on the microphone icon, and speak your message. The speech input will be converted to text, and the chatbot will respond accordingly.
+2. Input your [OpenAI API key](https://platform.openai.com/account/api-keys) in the field at the top.
+3. You can start interacting with the chatbot using either the "MESSAGE BOT" or "TALK TO BOT" options.
+4. For text input, click on the "MESSAGE BOT" expander, select a built-in prompt from the dropdown menu, and press CTRL + Enter to submit. The chatbot will respond with a generated message. You can continue the conversation by entering your own messages.
+5. For speech input, make sure the text message input field is cleared, then click on the "TALK TO BOT" expander, click on the microphone icon, and speak your message. The speech input will be converted to text, and the chatbot will respond accordingly.
 
 Below are two GIF images that demonstrate the usage of the **Talk to GPT-3.5** application:
 
@@ -126,10 +127,38 @@ Below are two GIF images that demonstrate the usage of the **Talk to GPT-3.5** a
 To use the **CodeMaxGPT** application, follow these steps:
 
 1. Visit the [**Introducing CodeMaxGPT**](https://maxinexiong.github.io/intro-codemaxgpt.html) webpage.
-2. Click on the "Get started now" button, and you'll be directed to the [**CodeMaxGPT on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/CodeMaxGPT).
-3. You can now start interacting with the coding assistant by entering your text message or selecting a request from the dropdown menu. Then, enter, paste, or upload your code as needed.
-4. The coding assistant will provide suggestions, completions, and other assistance based on the request prompt you select and the code you provide.
-5. Feel free to explore the other features of **CodeMaxGPT** to assist you in your coding tasks.
+2. Input your [OpenAI API key](https://platform.openai.com/account/api-keys) in the field at the top.
+3. Click on the "Get started now" button, and you'll be directed to the [**CodeMaxGPT on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/CodeMaxGPT).
+4. You can now start interacting with the coding assistant by entering your text message or selecting a request from the dropdown menu. Then, enter, paste, or upload your code as needed.
+5. The coding assistant will provide suggestions, completions, and other assistance based on the request prompt you select and the code you provide.
+6. Feel free to explore the other features of **CodeMaxGPT** to assist you in your coding tasks.
 
 For a detailed demonstration of using **CodeMaxGPT**, please visit the [**introduction page**](https://maxinexiong.github.io/intro-codemaxgpt.html) of the web application.
+
+## **Contribution**
+
+Contributions are welcome! If you would like to contribute to the development of these web applications, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your forked repository.
+5. Submit a pull request detailing your changes.
+
+Please ensure that your contributions align with the project's coding conventions and standards. Your efforts are greatly appreciated!
+
+## **License**
+
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/). Feel free to modify and use the code for your own purposes. However, please note that OpenAI's usage policies and guidelines still apply when using the OpenAI API.
+
+## **Acknowledgement**
+
+I would like to acknowledge the following organizations and technologies for their contributions to this project:
+
+- [OpenAI](https://openai.com/) for developing the powerful language models, including the Whisper model and gpt-3.5-turbo models, which have enabled me to create these web applications.
+- [Streamlit](https://streamlit.io/) for providing Streamlit Cloud, a platform that allows me to deploy these web applications easily and efficiently.
+- [Python](https://www.python.org/) for providing a powerful programming language that has been instrumental in the development of these applications.
+- [GitHub](https://github.com/) for hosting this repository and providing a collaborative platform for open-source development.
+
+Thank you for choosing to use the **OpenAI API Web Apps**. I hope that these applications will greatly amplify your programming capabilities and boost your efficiency, both in your work and in your everyday life.
 
