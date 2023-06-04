@@ -127,8 +127,8 @@ Below are two GIF images that demonstrate the usage of the **Talk to GPT-3.5** a
 To use the **CodeMaxGPT** application, follow these steps:
 
 1. Visit the [**Introducing CodeMaxGPT**](https://maxinexiong.github.io/intro-codemaxgpt.html) webpage.
-2. Input your [OpenAI API key](https://platform.openai.com/account/api-keys) in the field at the top.
-3. Click on the "Get started now" button, and you'll be directed to the [**CodeMaxGPT on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/CodeMaxGPT).
+2. Click on the "Get started now" button, and you'll be directed to the [**CodeMaxGPT on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/CodeMaxGPT).
+3. Input your [OpenAI API key](https://platform.openai.com/account/api-keys) in the field at the top.
 4. You can now start interacting with the coding assistant by entering your text message or selecting a request from the dropdown menu. Then, enter, paste, or upload your code as needed.
 5. The coding assistant will provide suggestions, completions, and other assistance based on the request prompt you select and the code you provide.
 6. Feel free to explore the other features of **CodeMaxGPT** to assist you in your coding tasks.
@@ -160,5 +160,5 @@ I would like to acknowledge the following organizations and technologies for the
 - [Python](https://www.python.org/) for providing a powerful programming language that has been instrumental in the development of these applications.
 - [GitHub](https://github.com/) for hosting this repository and providing a collaborative platform for open-source development.
 
-Thank you for choosing to use the **OpenAI API Web Apps**. I hope that these applications will greatly amplify your programming capabilities and boost your efficiency, both in your work and in your everyday life.
+Thank you for choosing to use the [**OpenAI API Web Apps**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/). I hope that these applications will greatly amplify your programming capabilities and boost your efficiency, both in your work and in your everyday life.
 
