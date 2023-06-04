@@ -114,9 +114,11 @@ To use the **Talk to GPT-3.5** application, follow these steps:
 
 Below are two GIF images that demonstrate the usage of the **Talk to GPT-3.5** application:
 
-[GIF 1]
 
-<p align='center'>Interacting through text messages</p>
+<p align='center'>
+    <img width=600 src="https://github.com/MaxineXiong/OpenAI-API-Web-Apps/assets/55864839/ca2629b8-5506-42e8-814b-5319429aaf83">
+    <br>Interacting through text messages
+</p>
 
 [GIF 2]
 
