@@ -34,3 +34,68 @@ new languages or frameworks, **[CodeMaxGPT](https://maxinexiong.github.io/intro-
 
 Please note that the third web application that’s based on the DALL·E model is currently unavailable due to issues with the validity of API keys. Stay tuned for updates on the availability 
 of this exciting application.
+
+## Features
+
+**[Talk to GPT-3.5](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5)** provides the following features:
+
+1) Enables communication with the GPT model through either **text messages** or **speech input**.
+
+2) Employs the gpt-3.5-turbo model to **generate high-quality human-like responses** to user’s prompts.
+
+3) Utilizes OpenAI's Whisper model for accurate **speech-to-text conversion** for user’s speech input.
+
+4) Provides an option to **play the bot’s responses in audio format** for an immersive and realistic conversational experience.
+
+5) Offers a variety of **built-in prompts** that assign roles or personas to the chatbot, provides an effective starting point for each type of conversations, and ensures that the chatbot will produce the desired responses in an efficient manner.
+
+Below are the features offered by **[CodeMaxGPT](https://maxinexiong.github.io/intro-codemaxgpt.html)**:
+
+1) Built upon OpenAI’s gpt-3.5-turbo model, **specifically tuned and optimized** to provide coding assistance to programmers of all levels.
+
+2) Supports **various coding tasks**, including code generation, debugging, refactoring, adding comments, code reviewing, generating GitHub README, and suggesting solutions to coding challenges.
+
+3) Provides **auto-prompts** for the GPT model tailored to the various coding tasks that users may need help with.
+
+4) Offers a **user-friendly interface** that surpasses the original ChatGPT.
+
+5) Allows **comfortable code entry and pasting**, and **direct uploading of code scripts** from the user’s local computer, for enhanced convenience.
+
+6) Enables users to code confidently in unfamiliar territory.
+
+## Repository Structure
+
+The repository structure of the project is as follows:
+```
+OpenAI-API-Web-Apps/
+├── .streamlit/
+│   └── config.toml
+├── assets/
+│   ├── OpenAI-API-Desktop-Chatbot.exe
+│   └── cover-page.gif
+├── pages/
+│   ├── 2_Talk_To_GPT3.5.py
+│   ├── 3_CodeMaxGPT.py
+│   └── 4_DALL·E_Image_Generator_(coming_soon).py
+├── Home.py
+├── packages.txt
+├── requirements.txt
+├── README.md
+└── LICENSE
+```
+The description of each file and folder in the repository is as follows:
+
+* **.streamlit/**: This folder contains the **config.toml** file, which configures the appearance of the Streamlit web application. The **config.toml** file specifies the theme settings such as primary color, background color, text color, and font.
+* **assets/**: This folder contains additional assets used in the project, including the **cover-page.gif** image file for the cover page. It also includes the **OpenAI-API-Desktop-Chatbot.exe**, which is the desktop version of [**Talk to GPT-3.5**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5). You can find the source code for the desktop application in the [ChatGPT-3.5-Desktop-App](https://github.com/MaxineXiong/ChatGPT-3.5-Desktop-App.git) repository.
+* **pages/**: This folder contains the Python code that powers the three web applications. It includes the following Python scripts:
+    - **2_Talk_To_GPT3.5.py**: Python script for the [**Talk to GPT-3.5**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5) web application.
+    - **3_CodeMaxGPT.py**: Python script for the [**CodeMaxGPT**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/CodeMaxGPT) web application.
+    - **4_DALL·E_Image_Generator_(coming_soon).py**: Python script for the **DALL·E Image Generator** web application (coming soon).
+* **Home.py**: This is a Python script for the home page of the Streamlit web applications. It contains code related to the navigation between the three web applications.
+* **packages.txt**: The file manages the project dependencies and is necessary for deploying the web applications on _Streamlit Cloud_.
+* **requirements.txt**: This file lists all the required Python modules and packages. It is also necessary for the deployment of the web application on _Streamlit Cloud_. It ensures that the required dependencies are installed when deploying the application.
+* **README.md**: Provides an overview of this repository.
+* **LICENSE**: The license file for the project.
+
+
+
