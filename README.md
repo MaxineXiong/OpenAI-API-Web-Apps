@@ -98,4 +98,38 @@ The description of each file and folder in the repository is as follows:
 * **LICENSE**: The license file for the project.
 
 
+## **Usage**
+
+The web applications are currently hosted on *Streamlit Cloud*. To access the applications, please visit [**OpenAI API Web Applications on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/). Once you visit the URL, you will be presented with a home page where you can select the desired web application. Click on the application you want to use, and it will open in a new tab or window.
+
+### **Get Started with Talk to GPT-3.5**
+
+To use the **Talk to GPT-3.5** application, follow these steps:
+
+1. Visit the [**Talk to GPT-3.5 on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5).
+2. You can start interacting with the chatbot using either the "MESSAGE BOT" or "TALK TO BOT" options.
+3. For text input, click on the "MESSAGE BOT" expander, select a built-in prompt from the dropdown menu, and press CTRL + Enter to submit. The chatbot will respond with a generated message. You can continue the conversation by entering your own messages.
+4. For speech input, make sure the text message input field is cleared, then click on the "TALK TO BOT" expander, click on the microphone icon, and speak your message. The speech input will be converted to text, and the chatbot will respond accordingly.
+
+Below are two GIF images that demonstrate the usage of the **Talk to GPT-3.5** application:
+
+[GIF 1]
+
+<p align='center'>Interacting through text messages</p>
+
+[GIF 2]
+
+<p align='center'>Interacting through speech input</p>
+
+### **Get Started with CodeMaxGPT**
+
+To use the **CodeMaxGPT** application, follow these steps:
+
+1. Visit the [**Introducing CodeMaxGPT**](https://maxinexiong.github.io/intro-codemaxgpt.html) webpage.
+2. Click on the "Get started now" button, and you'll be directed to the [**CodeMaxGPT on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/CodeMaxGPT).
+3. You can now start interacting with the coding assistant by entering your text message or selecting a request from the dropdown menu. Then, enter, paste, or upload your code as needed.
+4. The coding assistant will provide suggestions, completions, and other assistance based on the request prompt you select and the code you provide.
+5. Feel free to explore the other features of **CodeMaxGPT** to assist you in your coding tasks.
+
+For a detailed demonstration of using **CodeMaxGPT**, please visit the [**introduction page**](https://maxinexiong.github.io/intro-codemaxgpt.html) of the web application.
 
