@@ -196,5 +196,7 @@ I would like to acknowledge the following organizations and technologies for the
 - [Python](https://www.python.org/) for providing a powerful programming language that has been instrumental in the development of these applications.
 - [GitHub](https://github.com/) for hosting this repository and providing a collaborative platform for open-source development.
 
+<br/>
+
 Thank you for choosing to use the [**OpenAI API Web Apps**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/). I hope that these applications will greatly amplify your programming capabilities and boost your efficiency, both in your work and in your everyday life.
 
