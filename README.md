@@ -6,6 +6,10 @@
 [![OpenAI API](https://img.shields.io/badge/OpenAI_API-E5E4E2?logo=OpenAI&logoColor=%23000000)](https://openai.com/blog/openai-api)
 [![ChatGPT](https://img.shields.io/badge/ChatGPT-00A67E?logo=openai)](https://chat.openai.com/)
 
+<br/>
+
+Click the badge below to access the web applications:
+
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/) 
 
 <br/>
