@@ -7,6 +7,26 @@
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/) 
 
+<br/>
+
+## Table of Contents
+- [Project Description](#project-description)
+  - [Talk to GPT-3.5](#talk-to-gpt-35)
+  - [CodeMaxGPT](#codemaxgpt)
+  - [DALL·E Image Generator (Unavailable)](#dalle-image-generator-unavailable)
+- [Features](#features)
+- [Repository Structure](#repository-structure)
+- [Usage](#usage)
+  - [Get Started with Talk to GPT-3.5](#get-started-with-talk-to-gpt-35)
+  - [Get Started with CodeMaxGPT](#get-started-with-codemaxgpt)
+- [Contribution](#contribution)
+- [License](#license)
+- [Acknowledgement](#acknowledgement)
+
+<br/>
+
+## Project Description
+
 Welcome to the **[unofficial platform for custom web applications powered by OpenAI APIs](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/)**! This repository hosts 
 a collection of web applications deployed on *[Streamlit Cloud](https://streamlit.io/cloud)*. These applications leverage the capabilities of OpenAI's powerful language models to provide 
 unique functionalities. Currently, the platform includes three web applications:
@@ -35,6 +55,8 @@ new languages or frameworks, **[CodeMaxGPT](https://maxinexiong.github.io/intro-
 Please note that the third web application that’s based on the DALL·E model is currently unavailable due to issues with the validity of API keys. Stay tuned for updates on the availability 
 of this exciting application.
 
+<br/>
+
 ## Features
 
 **[Talk to GPT-3.5](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5)** provides the following features:
@@ -62,6 +84,8 @@ Below are the features offered by **[CodeMaxGPT](https://maxinexiong.github.io/i
 5) Allows **comfortable code entry and pasting**, and **direct uploading of code scripts** from the user’s local computer, for enhanced convenience.
 
 6) Enables users to code confidently in unfamiliar territory.
+
+<br/>
 
 ## Repository Structure
 
@@ -97,6 +121,7 @@ The description of each file and folder in the repository is as follows:
 * **README.md**: Provides an overview of this repository.
 * **LICENSE**: The license file for the project.
 
+<br/>
 
 ## **Usage**
 
@@ -140,6 +165,8 @@ To use the **CodeMaxGPT** application, follow these steps:
 
 For a detailed demonstration of using **CodeMaxGPT**, please visit the [**introduction page**](https://maxinexiong.github.io/intro-codemaxgpt.html) of the web application.
 
+<br/>
+
 ## **Contribution**
 
 Contributions are welcome! If you would like to contribute to the development of these web applications, please follow these steps:
@@ -152,9 +179,13 @@ Contributions are welcome! If you would like to contribute to the development of
 
 Please ensure that your contributions align with the project's coding conventions and standards. Your efforts are greatly appreciated!
 
+<br/>
+
 ## **License**
 
 This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/). Feel free to modify and use the code for your own purposes. However, please note that OpenAI's usage policies and guidelines still apply when using the OpenAI API.
+
+<br/>
 
 ## **Acknowledgement**
 
