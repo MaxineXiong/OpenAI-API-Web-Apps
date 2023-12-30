@@ -143,20 +143,8 @@ class ChatApp:
             st.session_state['user-speak'] = []
         if 'prompts' not in st.session_state:
             try:
-                headers = {'User-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:61.0) Gecko/20100101 Firefox/61.0'}
-                # Load a series of role-based prompts from https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv
-                r = requests.get('https://github.com/f/awesome-chatgpt-prompts/blob/main/prompts.csv', headers = headers)
-                # Retrieve the html content of the URL through BeautifulSoup
-                c = r.content
-                soup = BeautifulSoup(c, 'html.parser')
-                # Get html of the loading page in appropriate layout
-                html = soup.prettify()
-                # Read html to get the dataframe of prompts
-                dfs = pd.read_html(html)
-                df = dfs[0]
-                # Drop useless column
-                if 'Unnamed: 0' in df.columns:
-                    df = df.drop('Unnamed: 0', 1)
+                # Load a series of role-based prompts from https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/prompts.csv
+                df = pd.read_csv('https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/prompts.csv')
                 # Update prompt column
                 df['prompt'] = df['prompt'].apply(lambda x: self.transform_prompt(x))
                 # Save the prompts in session state
