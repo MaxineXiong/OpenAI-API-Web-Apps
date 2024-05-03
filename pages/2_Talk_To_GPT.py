@@ -51,12 +51,16 @@ class ChatGPTBot:
 
 
     # Play bot's message in audio
-    def saying(self, bot_message, lang):
+    def saying(self, bot_message):
         # Convert bot's message from text to speech
-        bot_speech = gTTS(text = bot_message, lang = lang, slow = False)
+        bot_speech = self.client.audio.speech.create(
+            model = 'tts-1',
+            voice = 'fable',
+            input = bot_message
+        )
         # Save the speech as a WAV audio file
         bot_audio_filename = 'bot-{}.wav'.format(datetime.now().strftime('%Y-%m-%d-%H-%M-%S'))
-        bot_speech.save(bot_audio_filename)
+        bot_speech.stream_to_file(bot_audio_filename)
         # Read the bot audio file
         bot_audio_file = open(bot_audio_filename, 'rb')
         bot_audio_bytes = bot_audio_file.read()
@@ -81,28 +85,8 @@ class ChatGPTBot:
             # Save the bot's message in streamlit session state
             st.session_state['bot-{}'.format(text_or_speak)].append(bot_message)
 
-            # Play bot's message in audio - in Chinese or English?
-            threshold = 0.5
-            # Get a list of English words from the the bot's message
-            en_words = re.findall("[a-zA-Z\']+", bot_message)
-            # Get a list of Chinese characters from the bot's message
-            ch_words = re.findall("[\u4e00-\u9FFF]", bot_message)  # detect chinese characters: eg. ['当', '然', '可', '以']
-            # Total number of both Chinese characters and English words
-            total_len = len(en_words) + len(ch_words)
-            # If the bot's message contains any Chinese character or English word
-            if total_len > 0:
-                # Proportion of Chinese part
-                prop_ch = len(ch_words) / total_len
-                if prop_ch > threshold:
-                    # If the bot's message is mostly in Chinese,
-                    # play the bot's audio message in Chinese
-                    self.saying(bot_message, 'zh-CN')
-                else:
-                    # If the bot's message is mostly in English,
-                    # play the bot's audio message in English
-                    self.saying(bot_message, 'en')
-            else:
-                self.saying(bot_message, 'en')
+            # Play the latest bot's message in audio
+            self.saying(bot_message)
 
 
     # Transcribe user's speech to text
@@ -126,7 +110,7 @@ class ChatApp:
     # The initializer method gets executed when a new object of ChatApp is created
     def __init__(self):
         # Set page config
-        st.set_page_config(page_title="Talk To GPT-3.5",
+        st.set_page_config(page_title="Talk To GPT",
                            page_icon=":microphone:",
                            layout='centered',
                            initial_sidebar_state="auto")
@@ -191,7 +175,7 @@ class ChatApp:
         # Set the page title
         st.title('Welcome to Talk To GPT')
         # Display a subheader that briefly describe the chatbot web app
-        st.subheader("Emplowering Conversations: A ChatBot You Can Message Or Talk To, Powered By OpenAI's GPT-3.5/4 Turbo Model and Whisper Model :robot_face:")
+        st.subheader("Emplowering Conversations: A ChatBot You Can Message Or Talk To, Powered By OpenAI's GPT-3.5/4 Turbo Model, Whisper (speech-to-text) Model, and TTS (text-to-speech) Model :robot_face:")
 
         # Get the API key from the user
         col1, col2, col3 = st.columns([1, 0.2, 1])
