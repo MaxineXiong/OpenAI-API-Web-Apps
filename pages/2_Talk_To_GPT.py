@@ -90,7 +90,7 @@ class ChatGPTBot:
 
 
     # Transcribe user's speech to text
-    def transcribe_voice(self, audio_bytes, model = 'whisper-1'):
+    def transcribe_voice(self, audio_bytes):
         # Write audio_bytes into a new WAV file
         filename = 'user-{}.wav'.format(datetime.now().strftime('%Y-%m-%d-%H-%M-%S'))
         with open(filename, 'wb') as f:
@@ -98,10 +98,12 @@ class ChatGPTBot:
 
         # Transcribe audio file to text through OpenAI's whisper model
         audio_file = open(filename, 'rb')
-        transcript = openai.Audio.transcribe(model, audio_file)
+        transcription = self.client.audio.transcriptions.create(
+                            model = 'whisper-1',
+                            file = audio_file)
 
         # Get the transcribed text
-        return transcript['text']
+        return transcription.text
 
 
 
@@ -198,8 +200,8 @@ class ChatApp:
 
             # Mark down a pro tip for users
             st.markdown("""*Pro tip: If you wish to initiate a new conversation, you can either \
-                           refresh the webpage or request the bot to discard all previous instructions \
-                           by inputting the command, "Ignore all previous instructions before this one".*""")
+                           refresh the webpage, choose "[Clear conversation history]" from the built-in prompt dropdown below, \
+                           or entering the command "Ignore all previous instructions before this one".*""")
 
             # Display an empty line
             st.text('')
@@ -246,7 +248,7 @@ class ChatApp:
                     st.error('Please ensure that all content has been deleted from the text message field')
                 else:
                     # Audio button to record user's voice
-                    audio_bytes = audio_recorder(neutral_color = '#FFFFFF',
+                    audio_bytes = audio_recorder(neutral_color = '#eeeeee',
                                                  pause_threshold = 3.0)  # stop after pausing for 3 seconds
                     if audio_bytes:
                         # Transcribe the user's voice to get user's voice message in text
@@ -254,7 +256,9 @@ class ChatApp:
                         # Display a status message
                         st.success('Voice recording finished. Feel free to continue.')
                         # Send user's voice message in text to the bot
-                        bot.chatting(user_message_voice, 'speak')
+                        bot.chatting(user_message = user_message_voice,
+                                     text_or_speak = 'speak',
+                                     selected_model = MODEL)
                     # Output chat history
                     st.text('')
                     self.output_chat_history('speak')
