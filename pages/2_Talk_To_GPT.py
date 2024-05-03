@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_chat import message
-import openai
+from openai import OpenAI
 import os
 import glob
 from audio_recorder_streamlit import audio_recorder
@@ -17,9 +17,9 @@ from bs4 import BeautifulSoup
 class ChatGPTBot:
     # The initializer method gets executed when a new ChatGPTBot object (i.e. bot) is created
     def __init__(self, api_key):
-        # Set up the OpenAI API key
-        openai.api_key = api_key
+        # Instantiate a client object using api_key
         self.api_key = api_key
+        self.client = OpenAI(api_key = self.api_key)
         # Initialize the message history for chat storing
         if 'message_history' not in st.session_state:
             st.session_state['message_history'] = []
@@ -30,20 +30,19 @@ class ChatGPTBot:
     def chat_with_gpt(self,
                       user_message,
                       model = "gpt-3.5-turbo",
-                      role = 'user',
                       message_history = []):
         # Assemble a request using user's message and append it to message_history
-        request = {"role": role, "content": user_message}
+        request = {"role": 'user', "content": user_message}
         message_history.append(request)
 
         # Create a chat completion object using OpenAI API
-        completion = openai.ChatCompletion.create(
+        completion = self.client.chat.completions.create(
           model = model,
           messages = message_history
         )  # other useful parameters: temperature and max_tokens
 
         # Extract bot's message from the API response
-        bot_message = completion['choices'][0]['message']['content']
+        bot_message = completion.choices[0].message.content
         # Assemble a response using bot's message and append it to message_history
         response = {"role": 'assistant', "content": bot_message}
         message_history.append(response)
@@ -67,12 +66,14 @@ class ChatGPTBot:
 
 
     # Chat with the bot. Make the bot talk in either Chinese or English
-    def chatting(self, user_message, text_or_speak):
-        if user_message != '':
+    def chatting(self, user_message, text_or_speak, selected_model):
+        if user_message.strip() != '':
             # Get the latest message history stored in streamlit session state
             message_history = st.session_state['message_history']
             # Send user message to GPT model and get the updated message history and bot's message
-            message_history, bot_message = self.chat_with_gpt(user_message = user_message, message_history = message_history)
+            message_history, bot_message = self.chat_with_gpt(user_message = user_message,
+                                                              model = selected_model,
+                                                              message_history = message_history)
             # Update the message history in streamlit session state
             st.session_state['message_history'] = message_history
             # Save the user message in streamlit session state
@@ -188,18 +189,20 @@ class ChatApp:
     # Run the Chatbot application
     def run(self):
         # Set the page title
-        st.title('Welcome to Talk To GPT-3.5')
+        st.title('Welcome to Talk To GPT')
         # Display a subheader that briefly describe the chatbot web app
-        st.subheader("Emplowering Conversations: A ChatBot You Can Message Or Talk To, Powered By OpenAI's GPT 3.5 Turbo Model and Whisper Model :robot_face:")
+        st.subheader("Emplowering Conversations: A ChatBot You Can Message Or Talk To, Powered By OpenAI's GPT-3.5/4 Turbo Model and Whisper Model :robot_face:")
 
         # Get the API key from the user
-        col1, col2 = st.columns([1, 1])
-        KEY = col1.text_input("Please paste your API key and hit the 'Enter' key", type="password",
-                               help = "To create and collect an API key, visit https://platform.openai.com/account/api-keys, \
-                               click on 'API Key', then select 'Create new secret key' and click 'Copy'. \
-                               Note: Please be mindful of the number of requests you've sent to GPT-3.5, \
-                               as exceeding the free credits limit of $18 may result in additional fees.\
-                               To check your usage, visit the same website and click on 'Usage'.")
+        col1, col2, col3 = st.columns([1, 0.2, 1])
+        KEY = col1.text_input("Enter your API Key", type="password",
+                               help = "To create and collect an API key, visit https://platform.openai.com/api-keys, \
+                               click on 'Create new secret key' and then click 'Copy' and paste your API key in the field below. \
+                               Note: Please be mindful of the usage you are consuming.\
+                               To keep track of your ongoing usage, please visit https://platform.openai.com/usage.")
+
+        # Get the GPT model selected by the user
+        MODEL = col3.selectbox('Select a GPT model', ('gpt-3.5-turbo', 'gpt-4-turbo'))
 
         # Mark down a breakline
         st.markdown("***")
@@ -212,7 +215,7 @@ class ChatApp:
             # Mark down a pro tip for users
             st.markdown("""*Pro tip: If you wish to initiate a new conversation, you can either \
                            refresh the webpage or request the bot to discard all previous instructions \
-                           by inputting the command, "ignore all previous instructions before this one".*""")
+                           by inputting the command, "Ignore all previous instructions before this one".*""")
 
             # Display an empty line
             st.text('')
@@ -222,8 +225,8 @@ class ChatApp:
                 df_prompts = st.session_state['prompts']
                 # Get list of roles for prompts
                 prompts = sorted(list(df_prompts['act']))
-                # Add "You want the bot to act as..." to the prompt list
-                prompts = tuple(['You want the bot to act as...'] + prompts)
+                # Add "You want the bot to act as..." and "[Clear conversation history]" to the prompt list
+                prompts = tuple(['You want the bot to act as...', '[Clear conversation history]'] + prompts)
                 # Dropdown box for built-in prompt selection
                 prompt_act_selected = st.selectbox(label = 'Choose a built-in prompt (optional)',
                                                    options = prompts, index = 0,
@@ -232,15 +235,21 @@ class ChatApp:
                 # Set the initial value for text message field based on the selected prompt
                 if prompt_act_selected == 'You want the bot to act as...':
                     initial_value = ''
+                elif prompt_act_selected == '[Clear conversation history]':
+                    initial_value = 'Ignore all previous instructions before this one.'
                 else:
                     prompt_id = list(df_prompts[df_prompts.act == prompt_act_selected].index)[0]
                     initial_value = df_prompts.loc[prompt_id, 'prompt']
+                    # Add a system message to set the behavior of the bot accordingly
+                    st.session_state['message_history'].append({'role': 'system', 'content': f'You are {prompt_act_selected}'})
                 # Text message input field with initial value
                 user_message_text = st.text_area('Send text message',
                                                   placeholder = "Type your text message here and press Ctrl+Enter to submit",
                                                   value = initial_value, height = 120)
                 # Send user's text message to the bot
-                bot.chatting(user_message_text, 'text')
+                bot.chatting(user_message = user_message_text,
+                             text_or_speak = 'text',
+                             selected_model = MODEL)
                 # Output chat history
                 st.text('')
                 self.output_chat_history('text')
@@ -249,7 +258,7 @@ class ChatApp:
             # Expander 2: Talk to bot
             with st.expander(':speaking_head_in_silhouette: TALK TO BOT'):
                 # Check if the text message field entry is cleared
-                if user_message_text != '':
+                if user_message_text.strip() != '':
                     st.error('Please ensure that all content has been deleted from the text message field')
                 else:
                     # Audio button to record user's voice

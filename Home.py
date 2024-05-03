@@ -18,7 +18,7 @@ st.markdown('**Please feel free to explore the following web apps or share your 
              More exciting OpenAI applications are coming on the way, so stay tuned! :clinking_glasses:**')
 
 # Display a markdown bullet point with a microphone emoji and a link to "Talk To GPT-3.5" app
-st.markdown('- **[:microphone: Talk To GPT-3.5](./Talk_To_GPT3.5)**')
+st.markdown('- **[:microphone: Talk To GPT](./Talk_To_GPT)**')
 # Display a markdown bullet point with a computer emoji and a link to "CodeMaxGPT" app
 st.markdown('- **[:computer: CodeMaxGPT](./CodeMaxGPT)**')
 # Display a markdown bullet point with an image frame emoji and a link to "DALL·E Image Generator (coming soon)" app
