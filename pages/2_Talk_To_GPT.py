@@ -185,10 +185,11 @@ class ChatApp:
                                help = "To create and collect an API key, visit https://platform.openai.com/api-keys, \
                                click on 'Create new secret key' and then click 'Copy' and paste your API key in the field below. \
                                Note: Please be mindful of the usage you are consuming.\
-                               To keep track of your ongoing usage, please visit https://platform.openai.com/usage.")
+                               To keep track of your ongoing usage and cost, please visit https://platform.openai.com/usage.")
 
         # Get the GPT model selected by the user
-        MODEL = col3.selectbox('Select a GPT model', ('gpt-3.5-turbo', 'gpt-4-turbo'))
+        MODEL = col3.selectbox('Select a GPT model', ('gpt-3.5-turbo', 'gpt-4-turbo'),
+                               help = "Please visit https://platform.openai.com/docs/models/overview for more information on GPT models.")
 
         # Mark down a breakline
         st.markdown("***")
