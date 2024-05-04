@@ -142,7 +142,7 @@ class App:
                             readonly=False,
                             min_lines=45,
                             key="ace",
-                            height=500,
+                            height=self.code_editor_height,
                             value = initial_code
                         )  # readonly=False: make the code editor editable
         # Get user's code
@@ -182,13 +182,13 @@ class App:
     # Send user's text prompt and the code input together to the bot
     def send_code(self, user_message, file_name, initial_code):
         # Determine code language based on the file extension
-        code_language = self.get_code_language(file_name, 'python')
+        initial_code_language = self.get_code_language(file_name = file_name, default_lang = 'python')
         # Get user's code in string
-        code = self.get_code(initial_code, code_language)
+        code = self.get_code(initial_code = initial_code, initial_lang = initial_code_language)
         # The 'Send' button appears only when user has uploaded their code
         if code.strip() != '':
             # Construct the prompt containing the code
-            if file_name == '':
+            if file_name.strip() == '':
                 prompt_code = 'Here is the code:\n' + code
             else:
                 # Include code file name in the prompt
@@ -226,10 +226,14 @@ class App:
         # If the user choose to enter or paste the code manually...
         if upload_method == 'Enter / paste my code':
             self.c2, self.c1 = st.columns([9, 2])
+            # Set the height of code editor to 496
+            self.code_editor_height = 496
             # Display a text input field for file name
             file_name = self.c1.text_input('File Name', placeholder = 'eg. index.html', help = 'Please provide the filename, or leave it blank if not applicable.')
             # Send the user's text prompt and the manually entered/pasted code together to the bot
-            self.send_code(user_message, file_name, '')
+            self.send_code(user_message = user_message,
+                           file_name = file_name,
+                           initial_code = '')
         # If the user choose to input the code by uploading a code script...
         if upload_method == 'Upload my code script':
             # Display a file uploader
@@ -240,10 +244,14 @@ class App:
                 # Get the script code in string
                 stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
                 script_code = stringio.read()
+                # Set the height of code editor to 410
+                self.code_editor_height = 410
                 # Automatically paste the script code to the code editor
                 # and send the user's text prompt and code input together to the bot
                 self.c2, self.c1 = st.columns([9, 2])
-                self.send_code(user_message, file_name, script_code)
+                self.send_code(user_message = user_message,
+                               file_name = file_name,
+                               initial_code = script_code)
 
 
     # Display the uploaded code inside Expanders on the web page
@@ -272,7 +280,7 @@ class App:
                             readonly=True,
                             min_lines=45,
                             key="ace-{}".format(file),
-                            height=400
+                            height=300
                          ) # readonly=True: make the code editor read only
 
 
@@ -287,10 +295,10 @@ class App:
             # Loop through the messages in reverse order to display the most recent first
             for i in range(len(bot_messages_pairs)-1, -1, -1):
                 # Retrieve the label and content for both bot and user messages based on current index
-                label_user = user_messages_pairs[i][0]
-                content_user = user_messages_pairs[i][1]
                 label_bot = bot_messages_pairs[i][0]
                 content_bot = bot_messages_pairs[i][1]
+                label_user = user_messages_pairs[i][0]
+                content_user = user_messages_pairs[i][1]
 
                 # Display the bot's message label
                 st.markdown("<span style='color:#6699FF'><strong>" + label_bot + "</strong></span>", unsafe_allow_html=True)
@@ -346,7 +354,8 @@ class App:
                                          options = ['Specify Custom Requirements', 'Debug Code', 'Refactor Code',  \
                                                     'Refactor Code to OOP', 'Comment Code', 'Review Code', \
                                                     'Generate GitHub README', \
-                                                    'Suggest a Solution For a Coding Challenge'], index = 0)
+                                                    'Suggest a Solution For a Coding Challenge', \
+                                                    '[Delete all previously uploaded files]'], index = 0)
 
             # If user choose to generate a GitHub README
             if action == 'Generate GitHub README':
@@ -359,7 +368,7 @@ class App:
                                                  please input the [HTTPS URL](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories) of that repo in the field below. \
                                                  Alternatively, if you wish to generate one for the uploaded program, leave the field blank.')
                 # Construct the prompt based on the repo URL entry
-                if repo_url == '':
+                if repo_url.strip() == '':
                     prompt = "Generate the GitHub README for the entire program."
                 else:
                     prompt = "Generate the GitHub README for the github repo: {}.".format(repo_url)
@@ -450,8 +459,12 @@ class App:
                     user_message = "Review the code. Provide feedback on any issues you identify \
                                     by pointing out the line numbers and briefly explaining the problem. Suggest \
                                     how to improve. Display the updated code inside a code block."
+                if action == '[Delete all previously uploaded files]':
+                    st.session_state['files'] = {}
+                    user_message = self.col1.text_area('Specify your requirements here',
+                                                        value = 'Please disregard any previously provided code.', height = 180)
 
-                # Dropdown for choosing a method to upload code
+                # Choose a method to upload code
                 self.uploading_code(user_message)
 
                 # Display the code uploaded (if any) for view
