@@ -117,7 +117,7 @@ The description of each file and folder in the repository is as follows:
 * **.streamlit/**: This folder contains the **config.toml** file, which configures the appearance of the Streamlit web application. The **config.toml** file specifies the theme settings such as primary color, background color, text color, and font.
 * **assets/**: This folder contains additional assets used in the project, including the **cover-page.gif** image file for the cover page. It also includes the **OpenAI-API-Desktop-Chatbot.exe**, which is the desktop version of [**Talk to GPT**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT). You can find the source code for the desktop application in the [ChatGPT-3.5-Desktop-App](https://github.com/MaxineXiong/ChatGPT-3.5-Desktop-App.git) repository.
 * **pages/**: This folder contains the Python code that powers the three web applications. It includes the following Python scripts:
-    - **2_Talk_To_GPT3.5.py**: Python script for the [**Talk to GPT**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT) web application.
+    - **2_Talk_To_GPT.py**: Python script for the [**Talk to GPT**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT) web application.
     - **3_CodeMaxGPT.py**: Python script for the [**CodeMaxGPT**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/CodeMaxGPT) web application.
     - **4_DALL·E_Image_Generator_(coming_soon).py**: Python script for the **DALL·E Image Generator** web application (coming soon).
 * **Home.py**: This is a Python script for the home page of the Streamlit web applications. It contains code related to the navigation between the three web applications.
