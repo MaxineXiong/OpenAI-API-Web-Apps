@@ -189,10 +189,10 @@ class App:
         if code.strip() != '':
             # Construct the prompt containing the code
             if file_name.strip() == '':
-                prompt_code = 'Here is the code:\n' + code
+                prompt_code = "Here is the code:\n```{}```".format(code)
             else:
                 # Include code file name in the prompt
-                prompt_code = "Here is the '{}' code:\n{}".format(file_name, code)
+                prompt_code = "Here is the '{}' code:\n```{}```".format(file_name, code)
             # Combine the user's text prompt and code prompt together
             prompt = user_message + '\n' + prompt_code
             # self.col3.text(prompt)
