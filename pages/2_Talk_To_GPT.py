@@ -189,7 +189,10 @@ class ChatApp:
 
         # Get the GPT model selected by the user
         MODEL = col3.selectbox('Select a GPT model', ('gpt-3.5-turbo', 'gpt-4-turbo'),
-                               help = "Please visit https://platform.openai.com/docs/models/overview for more information on GPT models.")
+                               help = "For many basic tasks, the difference between GPT4 \
+                                       and GPT-3.5 model is not significant. However, in more complex reasoning situation, \
+                                       GPT-4 is much more capable than any of the previous models, though it does come at a higher usage cost. \
+                                       Please visit https://platform.openai.com/docs/models/overview for more information on GPT models.")
 
         # Mark down a breakline
         st.markdown("***")
