@@ -16,13 +16,13 @@ Click the badge below to access the web applications:
 
 ## Table of Contents
 - [Project Description](#project-description)
-  - [Talk to GPT-3.5](#talk-to-gpt-35)
+  - [Talk to GPT](#talk-to-gpt-35)
   - [CodeMaxGPT](#codemaxgpt)
   - [DALL·E Image Generator (Unavailable)](#dalle-image-generator-unavailable)
 - [Features](#features)
 - [Repository Structure](#repository-structure)
 - [Usage](#usage)
-  - [Get Started with Talk to GPT-3.5](#get-started-with-talk-to-gpt-35)
+  - [Get Started with Talk to GPT](#get-started-with-talk-to-gpt-35)
   - [Get Started with CodeMaxGPT](#get-started-with-codemaxgpt)
 - [Contribution](#contribution)
 - [License](#license)
