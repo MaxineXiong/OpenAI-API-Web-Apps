@@ -132,11 +132,11 @@ The description of each file and folder in the repository is as follows:
 
 The web applications are currently hosted on *Streamlit Cloud*. To access the applications, please visit [**OpenAI API Web Applications on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/). Once you visit the URL, you will be presented with a home page where you can select the desired web application. Click on the application you want to use, and it will open in a new tab or window.
 
-### **Get Started with Talk to GPT-3.5**
+### **Get Started with Talk to GPT**
 
-To use the **Talk to GPT-3.5** application, follow these steps:
+To use the **Talk to GPT** application, follow these steps:
 
-1. Visit the [**Talk to GPT-3.5 on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5).
+1. Visit the [**Talk to GPT on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT).
 2. Input your [OpenAI API key](https://platform.openai.com/account/api-keys) in the field at the top.
 3. You can start interacting with the chatbot using either the "MESSAGE BOT" or "TALK TO BOT" options.
 4. For text input, click on the "MESSAGE BOT" expander, select a built-in prompt from the dropdown menu, and press CTRL + Enter to submit. The chatbot will respond with a generated message. You can continue the conversation by entering your own messages.
