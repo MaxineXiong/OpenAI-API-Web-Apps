@@ -16,13 +16,13 @@ Click the badge below to access the web applications:
 
 ## Table of Contents
 - [Project Description](#project-description)
-  - [Talk to GPT](#talk-to-gpt-35)
+  - [Talk to GPT](#talk-to-gpt)
   - [CodeMaxGPT](#codemaxgpt)
   - [DALL·E Image Generator (Unavailable)](#dalle-image-generator-unavailable)
 - [Features](#features)
 - [Repository Structure](#repository-structure)
 - [Usage](#usage)
-  - [Get Started with Talk to GPT](#get-started-with-talk-to-gpt-35)
+  - [Get Started with Talk to GPT](#get-started-with-talk-to-gpt)
   - [Get Started with CodeMaxGPT](#get-started-with-codemaxgpt)
 - [Contribution](#contribution)
 - [License](#license)
@@ -36,10 +36,10 @@ Welcome to the **[unofficial platform for custom web applications powered by Ope
 a collection of web applications deployed on *[Streamlit Cloud](https://streamlit.io/cloud)*. These applications leverage the capabilities of OpenAI's powerful language models to provide 
 unique functionalities. Currently, the platform includes three web applications:
 
-### Talk to GPT-3.5
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5) 
+### Talk to GPT
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT) 
 
-The first web application, **[Talk to GPT-3.5](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5)**, is an interactive chatbot application that allows users to 
+The first web application, **[Talk to GPT](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT)**, is an interactive chatbot application that allows users to 
 communicate with the model using text messages or speech input. Powered by OpenAI's **Whisper model** for speech-to-text conversion and the **gpt-3.5-turbo model** for generating high-quality 
 responses, this application offers a conversational experience similar to interacting with a human expert. Users also have the option to play the bot's responses in audio format, enhancing 
 the conversational experience with a greater sense of immersion and realism. Additionally, the application provides a variety of built-in prompts that assign roles or personas to the chatbot, 
@@ -64,7 +64,7 @@ of this exciting application.
 
 ## Features
 
-**[Talk to GPT-3.5](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5)** provides the following features:
+**[Talk to GPT](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT)** provides the following features:
 
 1) Enables communication with the GPT model through either **text messages** or **speech input**.
 
