@@ -16,13 +16,13 @@ Click the badge below to access the web applications:
 
 ## Table of Contents
 - [Project Description](#project-description)
-  - [Talk to GPT-3.5](#talk-to-gpt-35)
+  - [Talk to GPT](#talk-to-gpt)
   - [CodeMaxGPT](#codemaxgpt)
   - [DALL·E Image Generator (Unavailable)](#dalle-image-generator-unavailable)
 - [Features](#features)
 - [Repository Structure](#repository-structure)
 - [Usage](#usage)
-  - [Get Started with Talk to GPT-3.5](#get-started-with-talk-to-gpt-35)
+  - [Get Started with Talk to GPT](#get-started-with-talk-to-gpt)
   - [Get Started with CodeMaxGPT](#get-started-with-codemaxgpt)
 - [Contribution](#contribution)
 - [License](#license)
@@ -36,10 +36,10 @@ Welcome to the **[unofficial platform for custom web applications powered by Ope
 a collection of web applications deployed on *[Streamlit Cloud](https://streamlit.io/cloud)*. These applications leverage the capabilities of OpenAI's powerful language models to provide 
 unique functionalities. Currently, the platform includes three web applications:
 
-### Talk to GPT-3.5
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5) 
+### Talk to GPT
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT) 
 
-The first web application, **[Talk to GPT-3.5](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5)**, is an interactive chatbot application that allows users to 
+The first web application, **[Talk to GPT](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT)**, is an interactive chatbot application that allows users to 
 communicate with the model using text messages or speech input. Powered by OpenAI's **Whisper model** for speech-to-text conversion and the **gpt-3.5-turbo model** for generating high-quality 
 responses, this application offers a conversational experience similar to interacting with a human expert. Users also have the option to play the bot's responses in audio format, enhancing 
 the conversational experience with a greater sense of immersion and realism. Additionally, the application provides a variety of built-in prompts that assign roles or personas to the chatbot, 
@@ -64,7 +64,7 @@ of this exciting application.
 
 ## Features
 
-**[Talk to GPT-3.5](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5)** provides the following features:
+**[Talk to GPT](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT)** provides the following features:
 
 1) Enables communication with the GPT model through either **text messages** or **speech input**.
 
@@ -103,7 +103,7 @@ OpenAI-API-Web-Apps/
 │   ├── OpenAI-API-Desktop-Chatbot.exe
 │   └── cover-page.gif
 ├── pages/
-│   ├── 2_Talk_To_GPT3.5.py
+│   ├── 2_Talk_To_GPT.py
 │   ├── 3_CodeMaxGPT.py
 │   └── 4_DALL·E_Image_Generator_(coming_soon).py
 ├── Home.py
@@ -115,9 +115,9 @@ OpenAI-API-Web-Apps/
 The description of each file and folder in the repository is as follows:
 
 * **.streamlit/**: This folder contains the **config.toml** file, which configures the appearance of the Streamlit web application. The **config.toml** file specifies the theme settings such as primary color, background color, text color, and font.
-* **assets/**: This folder contains additional assets used in the project, including the **cover-page.gif** image file for the cover page. It also includes the **OpenAI-API-Desktop-Chatbot.exe**, which is the desktop version of [**Talk to GPT-3.5**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5). You can find the source code for the desktop application in the [ChatGPT-3.5-Desktop-App](https://github.com/MaxineXiong/ChatGPT-3.5-Desktop-App.git) repository.
+* **assets/**: This folder contains additional assets used in the project, including the **cover-page.gif** image file for the cover page. It also includes the **OpenAI-API-Desktop-Chatbot.exe**, which is the desktop version of [**Talk to GPT**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT). You can find the source code for the desktop application in the [ChatGPT-3.5-Desktop-App](https://github.com/MaxineXiong/ChatGPT-3.5-Desktop-App.git) repository.
 * **pages/**: This folder contains the Python code that powers the three web applications. It includes the following Python scripts:
-    - **2_Talk_To_GPT3.5.py**: Python script for the [**Talk to GPT-3.5**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5) web application.
+    - **2_Talk_To_GPT.py**: Python script for the [**Talk to GPT**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT) web application.
     - **3_CodeMaxGPT.py**: Python script for the [**CodeMaxGPT**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/CodeMaxGPT) web application.
     - **4_DALL·E_Image_Generator_(coming_soon).py**: Python script for the **DALL·E Image Generator** web application (coming soon).
 * **Home.py**: This is a Python script for the home page of the Streamlit web applications. It contains code related to the navigation between the three web applications.
@@ -132,17 +132,17 @@ The description of each file and folder in the repository is as follows:
 
 The web applications are currently hosted on *Streamlit Cloud*. To access the applications, please visit [**OpenAI API Web Applications on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/). Once you visit the URL, you will be presented with a home page where you can select the desired web application. Click on the application you want to use, and it will open in a new tab or window.
 
-### **Get Started with Talk to GPT-3.5**
+### **Get Started with Talk to GPT**
 
-To use the **Talk to GPT-3.5** application, follow these steps:
+To use the **Talk to GPT** application, follow these steps:
 
-1. Visit the [**Talk to GPT-3.5 on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT3.5).
+1. Visit the [**Talk to GPT on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT).
 2. Input your [OpenAI API key](https://platform.openai.com/account/api-keys) in the field at the top.
 3. You can start interacting with the chatbot using either the "MESSAGE BOT" or "TALK TO BOT" options.
 4. For text input, click on the "MESSAGE BOT" expander, select a built-in prompt from the dropdown menu, and press CTRL + Enter to submit. The chatbot will respond with a generated message. You can continue the conversation by entering your own messages.
 5. For speech input, make sure the text message input field is cleared, then click on the "TALK TO BOT" expander, click on the microphone icon, and speak your message. The speech input will be converted to text, and the chatbot will respond accordingly.
 
-Below are two GIF images that demonstrate the usage of the **Talk to GPT-3.5** application:
+Below are two GIF images that demonstrate the usage of the **Talk to GPT** application:
 
 
 <p align='center'>
