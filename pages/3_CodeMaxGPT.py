@@ -195,7 +195,7 @@ class App:
                 prompt_code = "Here is the '{}' code:\n{}".format(file_name, code)
             # Combine the user's text prompt and code prompt together
             prompt = user_message + '\n' + prompt_code
-            # col2.text(prompt)
+            # self.col3.text(prompt)
             # Add 3 lines of white space
             self.c1.markdown('#')
             self.c1.markdown('#')
@@ -258,11 +258,11 @@ class App:
     def show_code_uploaded(self):
         # Check if there's any code uploaded
         if len(st.session_state['files']) > 0:
-            self.col2.markdown('Expand to view the uploaded code below:')
+            self.col3.markdown('Expand to view the uploaded code below:')
             # Iterate over the uploaded code files in reverse order
             for file, code in list(st.session_state['files'].items())[::-1]:
                 # Display an Expander for each code file
-                with self.col2.expander(label = file, expanded = False):
+                with self.col3.expander(label = file, expanded = False):
                     # Determine the code language for the code editor
                     code_language = self.get_code_language(file, 'plain_text')
                     # Display the uploaded code in code editor inside each Expander
@@ -347,7 +347,7 @@ class App:
             self.bot = CoderBot(api_key = KEY, selected_model = MODEL)
 
             st.text('')
-            self.col1, self.col2 = st.columns([1, 1.25])
+            self.col1, col2, self.col3 = st.columns([1, 0.25, 1])
 
             # Dropdown box for coding task selection
             action = self.col1.selectbox(label = 'How can the bot assist with your code?',
