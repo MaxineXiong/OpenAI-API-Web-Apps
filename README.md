@@ -65,10 +65,10 @@ of this exciting application.
 
 **[Talk to GPT](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT)** provides the following features:
 
-1) Enables communication with the GPT model through either **text messages** or **speech input**.
+1) Constructed using with OpenAI's **Chat Completion API**, enables the selection of either the *gpt-3.5-turbo* model and *gpt-4-turbo* model to **generate high-quality human-like responses** to user’s prompts.
 
-2) Employs the gpt-3.5-turbo model to **generate high-quality human-like responses** to user’s prompts.
-
+2) Enables communication with the GPT model through either **text messages** or **speech input**.
+   
 3) Utilizes OpenAI's Whisper model for accurate **speech-to-text conversion** for user’s speech input.
 
 4) Provides an option to **play the bot’s responses in audio format** for an immersive and realistic conversational experience.
@@ -77,17 +77,19 @@ of this exciting application.
 
 Below are the features offered by **[CodeMaxGPT](https://maxinexiong.github.io/intro-codemaxgpt.html)**:
 
-1) Built upon OpenAI’s gpt-3.5-turbo model, **specifically tuned and optimized** to provide coding assistance to programmers of all levels.
+1) Enables the selection of either the *gpt-3.5-turbo* model and *gpt-4-turbo* model to generate high-quality human-like responses to user’s prompts.
+   
+2) Built upon OpenAI's **Assistants API**, **specifically tuned and optimized** to provide coding assistance to programmers of all levels.
 
-2) Supports **various coding tasks**, including code generation, debugging, refactoring, adding comments, code reviewing, generating GitHub README, and suggesting solutions to coding challenges.
+3) Supports **various coding tasks**, including code generation, debugging, refactoring, adding comments, code reviewing, generating GitHub README, and suggesting solutions to coding challenges.
 
-3) Provides **auto-prompts** for the GPT model tailored to the various coding tasks that users may need help with.
+4) Provides **auto-prompts** for the GPT model tailored to the various coding tasks that users may need help with.
 
-4) Offers a **user-friendly interface** that surpasses the original ChatGPT.
+5) Offers a **user-friendly interface** that surpasses the original ChatGPT.
 
-5) Allows **comfortable code entry and pasting**, and **direct uploading of code scripts** from the user’s local computer, for enhanced convenience.
+6) Allows **comfortable code entry and pasting**, and **direct uploading of code scripts** from the user’s local computer, for enhanced convenience.
 
-6) Enables users to code confidently in unfamiliar territory.
+7) Enables users to code confidently in unfamiliar territory.
 
 <br/>
 
