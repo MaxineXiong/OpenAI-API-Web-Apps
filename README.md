@@ -69,7 +69,7 @@ of this exciting application.
 
 2) Enables communication with the GPT model through either **text messages** or **speech input**.
    
-3) Utilizes OpenAI's Whisper model for accurate **speech-to-text conversion** for user’s speech input.
+3) Utilizes OpenAI's *Whisper* model for accurate **speech-to-text conversion** for user’s speech input.
 
 4) Provides an option to **play the bot’s responses in audio format** for an immersive and realistic conversational experience.
 
@@ -77,7 +77,7 @@ of this exciting application.
 
 Below are the features offered by **[CodeMaxGPT](https://maxinexiong.github.io/intro-codemaxgpt.html)**:
 
-1) Enables the selection of either the *gpt-3.5-turbo* model and *gpt-4-turbo* model to generate high-quality human-like responses to user’s prompts.
+1) Enables the selection of either the *gpt-3.5-turbo* model and *gpt-4-turbo* model to **generate high-quality human-like responses** to user’s prompts.
    
 2) Built upon OpenAI's **Assistants API**, **specifically tuned and optimized** to provide coding assistance to programmers of all levels.
 
