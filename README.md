@@ -36,7 +36,7 @@ Welcome to the **[unofficial platform for custom web applications powered by Ope
 a collection of web applications deployed on *[Streamlit Cloud](https://streamlit.io/cloud)*. These applications leverage the capabilities of OpenAI's powerful language models to provide 
 unique functionalities. Currently, the platform includes three web applications:
 
-### [Talk to GPT](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT)
+### Talk to GPT
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT) 
 
 The first web application, **[Talk to GPT](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT)**, is an interactive chatbot application that allows users to 
@@ -44,7 +44,7 @@ communicate with the model using text messages or speech input. Developed using 
 the conversational experience with a greater sense of immersion and realism. Additionally, the application provides a variety of built-in prompts that assign roles or personas to the chatbot, 
 providing an effective starting point for each type of conversation, and ensuring that the chatbot will produce the desired responses in an efficient and appropriate manner.
 
-### [CodeMaxGPT](https://maxinexiong.github.io/intro-codemaxgpt.html)
+### CodeMaxGPT
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/CodeMaxGPT) 
 
 The second web application, **[CodeMaxGPT](https://maxinexiong.github.io/intro-codemaxgpt.html)**, is designed to provide coding assistance to programmers. Built on OpenAI's [**Assistants API**](https://platform.openai.com/docs/assistants/overview?context=with-streaming), 
