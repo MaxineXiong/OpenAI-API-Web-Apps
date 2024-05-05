@@ -69,7 +69,7 @@ of this exciting application.
 
 2) Enables communication with the GPT model through either **text messages** or **speech input**.
    
-3) Utilizes OpenAI's *Whisper* model for accurate **speech-to-text conversion** for user’s speech input.
+3) Utilizes OpenAI's *Whisper* model for accurate **speech-to-text conversion** for user’s speech input, and *TTS* (**text-to-speech**) model for chatbot's audio response output.
 
 4) Provides an option to **play the bot’s responses in audio format** for an immersive and realistic conversational experience.
 
