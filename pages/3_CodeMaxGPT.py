@@ -337,28 +337,28 @@ class App:
             current_time = datetime.now()
             # Loop through the messages in reverse order to display the most recent first
             for i in range(len(bot_messages_pairs)-1, -1, -1):
-                # Retrieve the label and content for the bot's message based on current index
+                # Retrieve the time label and content for the bot's message based on current index
                 dt_bot = bot_messages_pairs[i][0]
                  # Calculate how long ago the bot's message was received
                 time_diff_bot = TimeDiff(start_time = dt_bot,
                                          end_time = current_time)
-                label_bot = f"CoderBot <{time_diff_bot} ago>:"
+                time_label_bot = f"<{time_diff_bot} ago>"
                 content_bot = bot_messages_pairs[i][1]
-                # Retrieve the label and content for the user's message based on current index
+                # Retrieve the time label and content for the user's message based on current index
                 dt_user = user_messages_pairs[i][0]
                  # Calculate how long ago the user's message was sent
                 time_diff_user = TimeDiff(start_time = dt_user,
                                           end_time = current_time)
-                label_user = f"You <{time_diff_user} ago>:"
+                time_label_user = f"<{time_diff_user} ago>"
                 content_user = user_messages_pairs[i][1]
 
                 # Display the bot's message label
-                st.markdown("<span style='color:#6699FF'><strong>" + label_bot + "</strong></span>", unsafe_allow_html=True)
+                st.markdown("<span style='color:#6699FF'><strong>CoderBot </strong>" + time_label_bot + ":</span>", unsafe_allow_html=True)
                 # Display the bot's message content
                 st.markdown(content_bot)
 
                 # Display user's message label
-                st.markdown("<span style='color:#6699FF'><strong>" + label_user + "</strong></span>", unsafe_allow_html=True)
+                st.markdown("<span style='color:#6699FF'><strong>You </strong>" + time_label_user + ":</span>", unsafe_allow_html=True)
                 # Display the user's message content
                 st.markdown(content_user)
 
