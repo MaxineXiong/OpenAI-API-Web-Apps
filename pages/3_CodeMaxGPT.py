@@ -7,6 +7,43 @@ from io import StringIO
 
 
 
+
+# A function that dynamically constructs a string describing the time difference
+def TimeDiff(start_time: datetime.datetime, end_time: datetime.datetime) -> str:
+    # Calculate the difference between the two timestamps
+    diff = end_time - start_time
+
+    # Extract days, seconds from the difference
+    days = diff.days
+    seconds = diff.seconds
+
+    # Calculate hours, minutes and remaining seconds
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    seconds = (seconds % 3600) % 60
+
+    # Build the output string dynamically
+    diff_str_list = []
+    if days > 0:
+        diff_str_list.append(f"{days} {'day' if days == 1 else 'days'}")
+    if hours > 0:
+        diff_str_list.append(f"{hours} {'hour' if hours == 1 else 'hours'}")
+    if minutes > 0:
+        diff_str_list.append(f"{minutes} {'minute' if minutes == 1 else 'minutes'}")
+    if seconds > 0:
+        diff_str_list.append(f"{seconds} {'second' if seconds == 1 else 'seconds'}")
+
+    # Join all parts with commas and 'and' as appropriate
+    if len(diff_str_list) > 1:
+        return ', '.join(diff_str_list[:-1]) + ' and ' + diff_str_list[-1]
+    elif len(diff_str_list) == 1:
+        return diff_str_list[0]
+    else:
+        return "Just now"
+
+
+
+
 # Define the class for the bot
 class CoderBot:
     # The initializer method gets executed when a new CoderBot object (i.e. bot) is created
@@ -39,8 +76,8 @@ class CoderBot:
     # Document and update the historical user and bot messages in session state
     def chatting_gpt(self, prompt):
         if prompt.strip() != '':
-            # Document the user's message in a dictionary variable in session state with the current timestamp as the key
-            st.session_state['user_messages']['You <{}>:'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))] = prompt
+            # Document the user's message in a dictionary variable in session state with the current datetime as the key
+            st.session_state['user_messages'][datetime.now()] = prompt
 
             # Add the user message to the thread
             request = self.client.beta.threads.messages.create(
@@ -68,8 +105,9 @@ class CoderBot:
 
             # Print the bot's response to the console
             print(bot_message)
-            # Document the latest bot's messages in a dictionary variable in session state with the current timestamp as the key
-            st.session_state['bot_messages']['CoderBot <{}>:'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))] = bot_message
+            # Document the latest bot's messages in a dictionary variable in session state with the current datetime as the key
+            st.session_state['bot_messages'][datetime.now()] = bot_message
+
 
 
 
@@ -295,12 +333,23 @@ class App:
             bot_messages_pairs = list(st.session_state['bot_messages'].items())
             user_messages_pairs = list(st.session_state['user_messages'].items())
 
+            # Record the current time
+            current_time = datetime.now()
             # Loop through the messages in reverse order to display the most recent first
             for i in range(len(bot_messages_pairs)-1, -1, -1):
-                # Retrieve the label and content for both bot and user messages based on current index
-                label_bot = bot_messages_pairs[i][0]
+                # Retrieve the label and content for the bot's message based on current index
+                dt_bot = bot_messages_pairs[i][0]
+                 # Calculate how long ago the bot's message was received
+                time_diff_bot = TimeDiff(start_time = dt_bot,
+                                         end_time = current_time)
+                label_bot = f"CoderBot <{time_diff_bot} ago>:"
                 content_bot = bot_messages_pairs[i][1]
-                label_user = user_messages_pairs[i][0]
+                # Retrieve the label and content for the user's message based on current index
+                dt_user = user_messages_pairs[i][0]
+                 # Calculate how long ago the user's message was sent
+                time_diff_user = TimeDiff(start_time = dt_user,
+                                          end_time = current_time)
+                label_user = f"You <{time_diff_user} ago>:"
                 content_user = user_messages_pairs[i][1]
 
                 # Display the bot's message label
