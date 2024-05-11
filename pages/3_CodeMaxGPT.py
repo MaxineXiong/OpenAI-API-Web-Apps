@@ -57,6 +57,8 @@ class CoderBot:
             st.session_state['bot_messages'] = {}
         if 'user_messages' not in st.session_state:
             st.session_state['user_messages'] = {}
+        if 'code_language' not in st.session_state:
+            st.session_state['code_language'] = ''
         # Create a new object of Assistant and store it as a session state variable
         if 'assistant' not in st.session_state:
             st.session_state['assistant'] = self.client.beta.assistants.create(
@@ -158,7 +160,7 @@ class App:
     # Get user's code from the code editor
     def get_code(self, initial_code, initial_lang):
         # Dropdown box for code language selecton
-        self.code_language = self.c1.selectbox("Language Mode", options=self.LANGUAGES, index = self.LANGUAGES.index(initial_lang))
+        st.session_state['code_language'] = self.c1.selectbox("Language Mode", options=self.LANGUAGES, index = self.LANGUAGES.index(initial_lang))
         # Dropdown box for editor theme selection. The editor theme by default is 'tomorrow_night'
         st.session_state['code_theme'] = self.c1.selectbox("Editor Theme", options=THEMES, index=THEMES.index('tomorrow_night'))
         # Dropdown box for editor font size selection. The font size ranges between 5 and 24, and is 14 by default
@@ -168,7 +170,7 @@ class App:
         with self.c2:
             code = st_ace(
                             placeholder="Input your code here",
-                            language=self.code_language,
+                            language=st.session_state['code_language'],
                             theme=st.session_state['code_theme'],
                             keybinding='vscode',
                             font_size=st.session_state['code_font_size'],
@@ -227,10 +229,10 @@ class App:
         if code.strip() != '':
             # Construct the prompt containing the code
             if file_name.strip() == '':
-                prompt_code = "Here is the code:  \n```{}  \n{}  \n```".format(self.code_language, code)
+                prompt_code = "Here is the code:  \n```{}  \n{}  \n```".format(st.session_state['code_language'], code)
             else:
                 # Include code file name in the prompt
-                prompt_code = "Here is the `{}` code:  \n```{}  \n{}  \n```".format(file_name, self.code_language, code)
+                prompt_code = "Here is the `{}` code:  \n```{}  \n{}  \n```".format(file_name, st.session_state['code_language'], code)
             # Combine the user's text prompt and code prompt together
             prompt = user_message + '  \n' + prompt_code
             # self.col3.text(prompt)
@@ -303,7 +305,7 @@ class App:
                 with self.col3.expander(label = file, expanded = False):
                     # Determine the code language for the code editor
                     if file == 'Sample Code Provided':
-                        uploaded_code_language = self.code_language
+                        uploaded_code_language = st.session_state['code_language']
                     else:
                         uploaded_code_language = self.get_code_language(file_name = file, default_lang = 'plain_text')
                     # Display the uploaded code in code editor inside each Expander
