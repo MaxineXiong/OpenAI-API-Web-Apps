@@ -18,7 +18,6 @@ Click the badge below to access the web applications:
 - [Project Description](#project-description)
   - [Talk to GPT](#talk-to-gpt)
   - [CodeMaxGPT](#codemaxgpt)
-  - [DALL·E Image Generator (Unavailable)](#dalle-image-generator-unavailable)
 - [Features](#features)
 - [Repository Structure](#repository-structure)
 - [Usage](#usage)
@@ -53,11 +52,6 @@ for the GPT model based on various use cases that a user may select. It also fea
 paste code and even upload code scripts directly from their local computer. With its user-friendly interface, advanced auto-prompting features, and seamless code uploading capabilities, 
 **CodeMaxGPT** is the ultimate coding companion. Whether you're a junior developer tackling complex programs or a seasoned pro exploring 
 new programming languages or frameworks, **CodeMaxGPT** has you covered.
-
-### DALL·E Image Generator (Unavailable)
-
-Please note that the third web application that’s based on the DALL·E model is currently unavailable due to issues with the validity of API keys. Stay tuned for updates on the availability 
-of this exciting application.
 
 <br/>
 
@@ -105,25 +99,25 @@ OpenAI-API-Web-Apps/
 │   └── cover-page.gif
 ├── pages/
 │   ├── 2_Talk_To_GPT.py
-│   ├── 3_CodeMaxGPT.py
-│   └── 4_DALL·E_Image_Generator_(coming_soon).py
+│   └── 3_CodeMaxGPT.py
 ├── Home.py
 ├── packages.txt
 ├── requirements.txt
+├── .gitignore
 ├── README.md
 └── LICENSE
 ```
 The description of each file and folder in the repository is as follows:
 
 * **.streamlit/**: This folder contains the **config.toml** file, which configures the appearance of the Streamlit web application. The **config.toml** file specifies the theme settings such as primary color, background color, text color, and font.
-* **assets/**: This folder contains additional assets used in the project, including the **cover-page.gif** image file for the cover page. It also includes the **ChatGPT-Tkinter-Desktop-App.exe**, which is the desktop version of **Talk to GPT**. You can find the source code for the desktop application in the [ChatGPT-Tkinter-Desktop-App](https://github.com/MaxineXiong/ChatGPT-Tkinter-Desktop-App.git) repository.
+* **assets/**: This folder contains additional assets used in the project, including the **cover-page.gif** image file for the cover page. It also includes the **ChatGPT-Tkinter-Desktop-App.exe**, which is a simplified desktop version of **Talk to GPT**. You can find the source code for the desktop application in the [ChatGPT-Tkinter-Desktop-App](https://github.com/MaxineXiong/ChatGPT-Tkinter-Desktop-App.git) repository.
 * **pages/**: This folder contains the Python code that powers the three web applications. It includes the following Python scripts:
     - **2_Talk_To_GPT.py**: Python script for the **Talk to GPT** web application.
     - **3_CodeMaxGPT.py**: Python script for the **CodeMaxGPT** web application.
-    - **4_DALL·E_Image_Generator_(coming_soon).py**: Python script for the **DALL·E Image Generator** web application (coming soon).
 * **Home.py**: This is a Python script for the home page of the Streamlit web applications. It contains code related to the navigation between the three web applications.
 * **packages.txt**: The file manages the project dependencies and is necessary for deploying the web applications on _Streamlit Cloud_.
 * **requirements.txt**: This file lists all the required Python modules and packages. It is also necessary for the deployment of the web applications on _Streamlit Cloud_. It ensures that the required dependencies are installed when deploying the applications.
+* **.gitignore**: This file intentionally specifies untracked files that Git should ignore.
 * **README.md**: Provides an overview of this repository.
 * **LICENSE**: The license file for the project.
 
