@@ -111,7 +111,7 @@ class App:
             # Iterate over the code files in reverse order
             for file in list(st.session_state['files'].keys())[::-1]:
                 # Display the names of the code files uploaded on the web page
-                if file != 'Sample Code':
+                if file != 'Sample Code Provided':
                     st.text('[{} uploaded]'.format(file))
         # The bot sends user's prompt to GPT model for chat processing
         self.bot.chatting_gpt(prompt = prompt)
@@ -205,12 +205,12 @@ class App:
                 # Store the uploaded code in the session state
                 if file_name.strip() != '':
                     # If the uploaded code has a file name, use the file name as the key
-                    if 'Sample Code' in st.session_state['files'].keys():
-                        del st.session_state['files']['Sample Code']
+                    if 'Sample Code Provided' in st.session_state['files'].keys():
+                        del st.session_state['files']['Sample Code Provided']
                     st.session_state['files'][file_name] = code
                 else:
-                    # If the uploaded code doesn't have a file name, use 'Sample Code' as the key
-                    st.session_state['files']['Sample Code'] = code
+                    # If the uploaded code doesn't have a file name, use 'Sample Code Provided' as the key
+                    st.session_state['files']['Sample Code Provided'] = code
                 # Send the final prompt to the bot
                 self.send_prompt(prompt)
 
