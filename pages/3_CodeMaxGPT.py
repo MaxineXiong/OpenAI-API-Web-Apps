@@ -111,7 +111,7 @@ class App:
             # Iterate over the code files in reverse order
             for file in list(st.session_state['files'].keys())[::-1]:
                 # Display the names of the code files uploaded on the web page
-                if file != 'Original Code':
+                if file != 'Sample Code':
                     st.text('[{} uploaded]'.format(file))
         # The bot sends user's prompt to GPT model for chat processing
         self.bot.chatting_gpt(prompt = prompt)
@@ -120,7 +120,7 @@ class App:
     # Get user's code from the code editor
     def get_code(self, initial_code, initial_lang):
         # Dropdown box for code language selecton
-        code_language = self.c1.selectbox("Language Mode", options=self.LANGUAGES, index = self.LANGUAGES.index(initial_lang))
+        self.code_language = self.c1.selectbox("Language Mode", options=self.LANGUAGES, index = self.LANGUAGES.index(initial_lang))
         # Dropdown box for editor theme selection. The editor theme by default is 'tomorrow_night'
         st.session_state['code_theme'] = self.c1.selectbox("Editor Theme", options=THEMES, index=THEMES.index('tomorrow_night'))
         # Dropdown box for editor font size selection. The font size ranges between 5 and 24, and is 14 by default
@@ -130,7 +130,7 @@ class App:
         with self.c2:
             code = st_ace(
                             placeholder="Input your code here",
-                            language=code_language,
+                            language=self.code_language,
                             theme=st.session_state['code_theme'],
                             keybinding='vscode',
                             font_size=st.session_state['code_font_size'],
@@ -189,12 +189,12 @@ class App:
         if code.strip() != '':
             # Construct the prompt containing the code
             if file_name.strip() == '':
-                prompt_code = "Here is the code:\n```{}```".format(code)
+                prompt_code = "Here is the code:  \n```{}  \n{}  \n```".format(self.code_language, code)
             else:
                 # Include code file name in the prompt
-                prompt_code = "Here is the '{}' code:\n```{}```".format(file_name, code)
+                prompt_code = "Here is the `{}` code:  \n```{}  \n{}  \n```".format(file_name, self.code_language, code)
             # Combine the user's text prompt and code prompt together
-            prompt = user_message + '\n' + prompt_code
+            prompt = user_message + '  \n' + prompt_code
             # self.col3.text(prompt)
             # Add 3 lines of white space
             self.c1.markdown('#')
@@ -205,12 +205,12 @@ class App:
                 # Store the uploaded code in the session state
                 if file_name.strip() != '':
                     # If the uploaded code has a file name, use the file name as the key
-                    if 'Original Code' in st.session_state['files'].keys():
-                        del st.session_state['files']['Original Code']
+                    if 'Sample Code' in st.session_state['files'].keys():
+                        del st.session_state['files']['Sample Code']
                     st.session_state['files'][file_name] = code
                 else:
-                    # If the uploaded code doesn't have a file name, use 'Original Code' as the key
-                    st.session_state['files']['Original Code'] = code
+                    # If the uploaded code doesn't have a file name, use 'Sample Code' as the key
+                    st.session_state['files']['Sample Code'] = code
                 # Send the final prompt to the bot
                 self.send_prompt(prompt)
 
@@ -264,11 +264,11 @@ class App:
                 # Display an Expander for each code file
                 with self.col3.expander(label = file, expanded = False):
                     # Determine the code language for the code editor
-                    code_language = self.get_code_language(file, 'plain_text')
+                    uploaded_code_language = self.get_code_language(file, 'python')
                     # Display the uploaded code in code editor inside each Expander
                     st_ace(
                             value = code,
-                            language = code_language,
+                            language = uploaded_code_language,
                             theme=st.session_state['code_theme'],
                             keybinding='vscode',
                             font_size=st.session_state['code_font_size'],
@@ -422,10 +422,10 @@ class App:
                 lang_selected = _c2.selectbox("Language Mode", options = coding_langs, index = 0)
                 # Construct the prompt based on the selected coding language
                 if 'SQL' in lang_selected:
-                    prompt = 'Solve the problem in {}:\n'.format(lang_selected) + coding_problem + '\nExplain the solution and display it in a code block.'
+                    prompt = 'Solve the problem in {}:  \n'.format(lang_selected) + coding_problem + '  \nExplain the solution and display it in a code block.'
                 else:
-                    prompt = 'Solve the problem in {}:\n'.format(lang_selected) + coding_problem \
-                             + '\nExplain the solution and display it in a code block.\nAlso, Clarify the time and space complexity of the solution.'
+                    prompt = 'Solve the problem in {}:  \n'.format(lang_selected) + coding_problem \
+                             + '  \nExplain the solution and display it in a code block.  \nAlso, Clarify the time and space complexity of the solution.'
                 # 'Send' button only appears if the coding problem is entered
                 if coding_problem.strip() != '':
                     # Add 3 lines of white space
