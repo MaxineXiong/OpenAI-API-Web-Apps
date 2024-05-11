@@ -264,7 +264,10 @@ class App:
                 # Display an Expander for each code file
                 with self.col3.expander(label = file, expanded = False):
                     # Determine the code language for the code editor
-                    uploaded_code_language = self.get_code_language(file, 'python')
+                    if file == 'Sample Code Provided':
+                        uploaded_code_language = self.code_language
+                    else:
+                        uploaded_code_language = self.get_code_language(file_name = file, default_lang = 'plain_text')
                     # Display the uploaded code in code editor inside each Expander
                     st_ace(
                             value = code,
