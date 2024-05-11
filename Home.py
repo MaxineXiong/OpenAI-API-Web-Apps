@@ -23,8 +23,8 @@ st.markdown('- **[:microphone: Talk To GPT](./Talk_To_GPT)**')
 st.markdown('- **[:computer: CodeMaxGPT](./CodeMaxGPT)**')
 # Display a markdown bullet point with an image frame emoji and a link to "DALL·E Image Generator (coming soon)" app
 # Also display a message that the app is currently unavailable due to API key issues
-st.markdown("- **[:frame_with_picture: DALL·E Image Generator (coming soon)](./DALL·E_Image_Generator_(coming_soon))**: \
-             Currently unavailable :no_entry: due to an issue with the validity of API keys :key: for the DALL·E model. Awaiting resolution from OpenAI.")
+# st.markdown("- **[:frame_with_picture: DALL·E Image Generator (coming soon)](./DALL·E_Image_Generator_(coming_soon))**: \
+#              Currently unavailable :no_entry: due to an issue with the validity of API keys :key: for the DALL·E model. Awaiting resolution from OpenAI.")
 # Display an empty line
 st.text('')
 # Display an image from the 'assets' folder named 'cover-page.gif'
