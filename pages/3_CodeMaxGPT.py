@@ -40,7 +40,7 @@ class CoderBot:
     def chatting_gpt(self, prompt):
         if prompt.strip() != '':
             # Document the user's message in a dictionary variable in session state with the current timestamp as the key
-            st.session_state['user_messages']['You <{}>:'.format(datetime.now().strftime('%H:%M:%S %Y/%m/%d'))] = prompt
+            st.session_state['user_messages']['You <{}>:'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S %Z%z'))] = prompt
 
             # Add the user message to the thread
             request = self.client.beta.threads.messages.create(
@@ -69,7 +69,7 @@ class CoderBot:
             # Print the bot's response to the console
             print(bot_message)
             # Document the latest bot's messages in a dictionary variable in session state with the current timestamp as the key
-            st.session_state['bot_messages']['CoderBot <{}>:'.format(datetime.now().strftime('%H:%M:%S %Y/%m/%d'))] = bot_message
+            st.session_state['bot_messages']['CoderBot <{}>:'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S %Z%z'))] = bot_message
 
 
 
