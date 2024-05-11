@@ -9,7 +9,7 @@ from io import StringIO
 
 
 # A function that dynamically constructs a string describing the time difference
-def TimeDiff(start_time: datetime.datetime, end_time: datetime.datetime) -> str:
+def TimeDiff(start_time, end_time):
     # Calculate the difference between the two timestamps
     diff = end_time - start_time
 
