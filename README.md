@@ -193,8 +193,8 @@ This project is licensed under the [MIT License](https://choosealicense.com/lice
 
 I would like to acknowledge the following organizations and technologies for their contributions to this project:
 
-- [OpenAI](https://openai.com/) for developing the powerful language models, including the Whisper model and gpt-3.5-turbo models, which have enabled me to create these web applications.
-- [Streamlit](https://streamlit.io/) for providing Streamlit Cloud, a platform that allows me to deploy these web applications easily and efficiently.
+- [OpenAI](https://openai.com/) for developing the powerful language models and APIs, which have enabled me to create these web applications.
+- [Streamlit](https://streamlit.io/) for providing a wide range of widgets and Streamlit Cloud, which is a platform that allows me to deploy these web applications easily and efficiently.
 - [Python](https://www.python.org/) for providing a powerful programming language that has been instrumental in the development of these applications.
 - [GitHub](https://github.com/) for hosting this repository and providing a collaborative platform for open-source development.
 
