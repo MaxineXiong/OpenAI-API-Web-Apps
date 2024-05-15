@@ -177,28 +177,28 @@ class ChatApp:
         # Set the page title
         st.title('Welcome to Talk To GPT')
         # Display a subheader that briefly describe the chatbot web app
-        st.subheader("Emplowering Conversations: A ChatBot You Can Message Or Talk To, Powered By OpenAI's GPT-3.5/4 Turbo Model, Whisper (speech-to-text) Model, and TTS (text-to-speech) Model :robot_face:")
+        st.subheader("Emplowering Conversations: A ChatBot You Can Message Or Talk To, Powered By OpenAI's GPT-3.5/4 Models, Whisper (speech-to-text) Model, and TTS (text-to-speech) Model :robot_face:")
 
-        # Get the API key from the user
         col1, col2, col3 = st.columns([1, 0.2, 1])
-        KEY = col1.text_input("Enter your API Key", type="password",
+        # Get the GPT model selected by the user
+        MODEL = col1.selectbox('Select a GPT model', ('gpt-3.5-turbo', 'gpt-4o', 'gpt-4-turbo'),
+                               help = "For many basic tasks, the difference between GPT-4 \
+                                       and GPT-3.5 model is not significant. However, in more complex reasoning situation, \
+                                       GPT-4 models are much more capable than any of the previous models, though they do come at a higher usage cost. \
+                                       Please visit https://platform.openai.com/docs/models/overview for more information on GPT models.")
+        # Get the API key from the user
+        KEY = col3.text_input("Enter your API Key", type="password",
                                help = "To create and collect an API key, visit https://platform.openai.com/api-keys, \
                                click on 'Create new secret key' and then click 'Copy' and paste your API key in the field below. \
                                Note: Please be mindful of the usage you are consuming.\
                                To keep track of your ongoing usage and cost, please visit https://platform.openai.com/usage.")
 
-        # Get the GPT model selected by the user
-        MODEL = col3.selectbox('Select a GPT model', ('gpt-3.5-turbo', 'gpt-4-turbo'),
-                               help = "For many basic tasks, the difference between GPT4 \
-                                       and GPT-3.5 model is not significant. However, in more complex reasoning situation, \
-                                       GPT-4 is much more capable than any of the previous models, though it does come at a higher usage cost. \
-                                       Please visit https://platform.openai.com/docs/models/overview for more information on GPT models.")
 
         # Mark down a breakline
         st.markdown("***")
 
         # If API key is entered
-        if KEY != '':
+        if KEY.strip() != '':
             # Initialize the chatbot with the provided API key
             bot = ChatGPTBot(KEY)
 

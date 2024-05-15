@@ -374,26 +374,26 @@ class App:
         # Display a subheader that briefly describe the coding assistant web app
         st.subheader("Simplifying Coding With CodeMaxGPT: Your AI Coding Assistant For Easy Code Generation, Debugging, Refactoring, and Documentation :computer:")
 
-        # Get the API key from the user
         cl1, cl2, cl3 = st.columns([1, 0.8, 1])
-        KEY = cl1.text_input("Enter your API Key", type="password",
+        # Get the GPT model selected by the user
+        MODEL = cl1.selectbox('Select a GPT model', ('gpt-4-turbo', 'gpt-4o', 'gpt-3.5-turbo'),
+                               help = "For many basic tasks, the difference between GPT-4 \
+                                       and GPT-3.5 model is not significant. However, in more complex reasoning situation, \
+                                       GPT-4 models are much more capable than any of the previous models, though they do come at a higher usage cost. \
+                                       Please visit https://platform.openai.com/docs/models/overview for more information on GPT models.")
+        # Get the API key from the user
+        KEY = cl3.text_input("Enter your API Key", type="password",
                               help = "To create and collect an API key, visit https://platform.openai.com/api-keys, \
                                       click on 'Create new secret key' and then click 'Copy' and paste your API key in the field below. \
                                       Note: Please be mindful of the usage you are consuming.\
                                       To keep track of your ongoing usage and cost, please visit https://platform.openai.com/usage.")
 
-        # Get the GPT model selected by the user
-        MODEL = cl3.selectbox('Select a GPT model', ('gpt-4-turbo', 'gpt-3.5-turbo'),
-                               help = "For many basic tasks, the difference between GPT4 \
-                                       and GPT-3.5 model is not significant. However, in more complex reasoning situation, \
-                                       GPT-4 is much more capable than any of the previous models, though it does come at a higher usage cost. \
-                                       Please visit https://platform.openai.com/docs/models/overview for more information on GPT models.")
 
         # Mark down a breakline
         st.markdown("***")
 
         # If API key is not entered
-        if KEY == '':
+        if KEY.strip() == '':
             st.error('Please enter your API key to start the service!')
         # If API key is entered
         else:
