@@ -39,7 +39,7 @@ unique functionalities. Currently, the platform includes three web applications:
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT) 
 
 The first web application, **[Talk to GPT](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT)**, is an interactive chatbot application that allows users to 
-communicate with the model using text messages or speech input. Developed using OpenAI's [**Chat Completions API**](https://platform.openai.com/docs/guides/text-generation/chat-completions-api), and powered by OpenAI's [***gpt-4-turbo***](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4) model or [***gpt-3.5-turbo***](https://platform.openai.com/docs/models/gpt-3-5-turbo) model for generating high-quality responses, [***Whisper***](https://platform.openai.com/docs/models/whisper) model for speech-to-text conversion, and [***TTS***](https://platform.openai.com/docs/models/tts) model for text-to-speech audio output, this application offers a conversational experience similar to interacting with a human expert. Users can select between the ***GPT-3.5 Turbo*** and ***GPT-4 Turbo*** models based on their needs, and have the option to play the bot's responses in audio format, enhancing 
+communicate with the model using text messages or speech input. Developed using OpenAI's [**Chat Completions API**](https://platform.openai.com/docs/guides/text-generation/chat-completions-api), and powered by OpenAI's [***gpt-4-turbo***](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4), [***gpt-4o***](https://platform.openai.com/docs/models/gpt-4o), or [***gpt-3.5-turbo***](https://platform.openai.com/docs/models/gpt-3-5-turbo) model for generating high-quality responses, [***Whisper***](https://platform.openai.com/docs/models/whisper) model for speech-to-text conversion, and [***TTS***](https://platform.openai.com/docs/models/tts) model for text-to-speech audio output, this application offers a conversational experience similar to interacting with a human expert. Users can select between the ***GPT-3.5 Turbo***, ***GPT-4 Turbo*** and ***GPT-4o*** models based on their needs, and have the option to play the bot's responses in audio format, enhancing 
 the conversational experience with a greater sense of immersion and realism. Additionally, the application provides a variety of built-in prompts that assign roles or personas to the chatbot, 
 providing an effective starting point for each type of conversation, and ensuring that the chatbot will produce the desired responses in an efficient and appropriate manner.
 
@@ -47,7 +47,7 @@ providing an effective starting point for each type of conversation, and ensurin
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/CodeMaxGPT) 
 
 The second web application, **[CodeMaxGPT](https://maxinexiong.github.io/intro-codemaxgpt.html)**, is designed to provide coding assistance to programmers. Built on OpenAI's [**Assistants API**](https://platform.openai.com/docs/assistants/overview?context=with-streaming), 
-it is specifically tuned and optimized to cater to the diverse needs of developers, including code generation, debugging, refactoring, and documentation. The platform allows users to choose between the ***GPT-3.5 Turbo*** and ***GPT-4 Turbo*** models, providing auto-prompts 
+it is specifically tuned and optimized to cater to the diverse needs of developers, including code generation, debugging, refactoring, and documentation. The platform allows users to choose between the ***GPT-3.5 Turbo***, ***GPT-4 Turbo*** and ***GPT-4o*** models, providing auto-prompts 
 for the GPT model based on various use cases that a user may select. It also features a more user-friendly interface compared to the original [ChatGPT](https://openai.com/blog/chatgpt), allowing users to comfortably enter or 
 paste code and even upload code scripts directly from their local computer. With its user-friendly interface, advanced auto-prompting features, and seamless code uploading capabilities, 
 **CodeMaxGPT** is the ultimate coding companion. Whether you're a junior developer tackling complex programs or a seasoned pro exploring 
@@ -59,7 +59,7 @@ new programming languages or frameworks, **CodeMaxGPT** has you covered.
 
 **[Talk to GPT](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT)** provides the following features:
 
-1) Constructed using with OpenAI's **Chat Completions API**, enables the selection of either the ***gpt-3.5-turbo*** model and ***gpt-4-turbo*** model to **generate high-quality human-like responses** to user’s prompts.
+1) Constructed using with OpenAI's **Chat Completions API**, enables the selection of either the ***gpt-3.5-turbo***, ***gpt-4o*** and ***gpt-4-turbo*** model to **generate high-quality human-like responses** to user’s prompts.
 
 2) Enables communication with the GPT model through either **text messages** or **speech input**.
    
@@ -71,7 +71,7 @@ new programming languages or frameworks, **CodeMaxGPT** has you covered.
 
 Below are the features offered by **[CodeMaxGPT](https://maxinexiong.github.io/intro-codemaxgpt.html)**:
 
-1) Enables the selection of either the ***gpt-3.5-turbo*** model and ***gpt-4-turbo*** model to **generate high-quality human-like responses** to user’s prompts.
+1) Enables the selection of either the ***gpt-3.5-turbo***, ***gpt-4o*** and ***gpt-4-turbo*** model to **generate high-quality human-like responses** to user’s prompts.
    
 2) Built upon OpenAI's **Assistants API**, **specifically tuned and optimized** to provide coding assistance to programmers of all levels.
 
@@ -132,8 +132,8 @@ The web applications are currently hosted on *Streamlit Cloud*. To access the ap
 To use the **Talk to GPT** application, follow these steps:
 
 1. Visit the [**Talk to GPT on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT).
-2. Input your [OpenAI API key](https://platform.openai.com/api-keys) in the field at the top.
-3. Select your desired GPT model.
+2. Select your desired GPT model.
+3. Input your [OpenAI API key](https://platform.openai.com/api-keys) in the field at the top.
 4. You can start interacting with the chatbot using either the "MESSAGE BOT" or "TALK TO BOT" options.
 5. For text input, click on the "MESSAGE BOT" expander, select a built-in prompt from the dropdown menu, and press CTRL + Enter to submit. The chatbot will respond with a generated message. You can continue the conversation by entering your own messages.
 6. For speech input, make sure the text message input field is cleared, then click on the "TALK TO BOT" expander, click on the microphone icon, and speak your message. The speech input will be converted to text, and the chatbot will respond accordingly.
@@ -159,8 +159,8 @@ To use the **CodeMaxGPT** application, follow these steps:
 
 1. Visit the [**Introducing CodeMaxGPT**](https://maxinexiong.github.io/intro-codemaxgpt.html) webpage.
 2. Click on the "Get started now" button, and you'll be directed to the [**CodeMaxGPT on Streamlit**](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/CodeMaxGPT).
-3. Input your [OpenAI API key](https://platform.openai.com/api-keys) in the field at the top.
-4. Select your desired GPT model (*gpt-4-turbo* is **recommended**).
+3. Select your desired GPT model (*gpt-4-turbo* is **recommended**).
+4. Input your [OpenAI API key](https://platform.openai.com/api-keys) in the field at the top.
 5. You can now start interacting with the coding assistant by entering your text message or selecting a request from the dropdown menu. Then, enter, paste, or upload your code as needed.
 6. The coding assistant will provide suggestions, completions, and other assistance based on the request prompt you select and the code you provide.
 7. Feel free to explore the other features of **CodeMaxGPT** to assist you in your coding tasks.
