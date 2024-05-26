@@ -143,16 +143,25 @@ Below are two GIF images that demonstrate the usage of the **Talk to GPT** appli
 
 
 <p align='center'>
-    <img width=600 src="https://github.com/MaxineXiong/OpenAI-API-Web-Apps/assets/55864839/ca2629b8-5506-42e8-814b-5319429aaf83">
+    <img width=600 src="https://github.com/MaxineXiong/OpenAI-API-Web-Apps/assets/55864839/e0f8020a-0128-45ca-83f0-af658ab1e37a">
     <br>Interacting through text messages
 </p>
+
 
 ###
 
 <p align='center'>
-    <img width=600 src="https://github.com/MaxineXiong/OpenAI-API-Web-Apps/assets/55864839/9d975dc5-5d38-4ee3-8cf2-085249f166fb">
+    <img width=600 src="">
     <br>Interacting through speech input
 </p>
+
+###
+
+You can also view the full demo video of the **Talk to GPT** application by clicking on the badge below:
+
+[![Demo Video - Talk to GPT](https://img.shields.io/badge/Demo_Video-Talk_to_GPT-6699FF)](https://1drv.ms/v/s!AhxVr7ogXVBRlS_l5uFoOAseoO7t)
+
+<br/>
 
 ### **Get Started with CodeMaxGPT**
 
