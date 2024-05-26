@@ -151,7 +151,7 @@ Below are two GIF images that demonstrate the usage of the **Talk to GPT** appli
 ###
 
 <p align='center'>
-    <img width=600 src="">
+    <img width=600 src="https://github.com/MaxineXiong/OpenAI-API-Web-Apps/assets/55864839/9184302a-0e0f-4488-a207-b7dafdc4675a">
     <br>Interacting through speech input
 </p>
 
@@ -159,7 +159,7 @@ Below are two GIF images that demonstrate the usage of the **Talk to GPT** appli
 
 You can also view the full demo video of the **Talk to GPT** application by clicking on the badge below:
 
-[![Demo Video - Talk to GPT](https://img.shields.io/badge/Demo_Video-Talk_to_GPT-6699FF)](https://1drv.ms/v/s!AhxVr7ogXVBRlS_l5uFoOAseoO7t)
+[![Watch Demo - Talk to GPT](https://img.shields.io/badge/Watch_Demo-Talk_to_GPT-6699FF)](https://1drv.ms/v/s!AhxVr7ogXVBRlS_l5uFoOAseoO7t)
 
 <br/>
 
