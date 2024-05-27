@@ -157,7 +157,7 @@ Below are two GIF images that demonstrate the usage of the **Talk to GPT** appli
 
 ###
 
-You can also view the full demo video of the **Talk to GPT** application by clicking on the badge below:
+You can also view the full demo video of the **Talk to GPT** application by clicking on the badge below.
 
 [![Watch Demo - Talk to GPT](https://img.shields.io/badge/Watch_Demo-Talk_to_GPT-6699FF)](https://1drv.ms/v/s!AhxVr7ogXVBRlS_l5uFoOAseoO7t)
 
@@ -175,7 +175,9 @@ To use the **CodeMaxGPT** application, follow these steps:
 6. The coding assistant will provide suggestions, completions, and other assistance based on the request prompt you select and the code you provide.
 7. Feel free to explore the other features of **CodeMaxGPT** to assist you in your coding tasks.
 
-For a detailed demonstration of using **CodeMaxGPT**, please visit the [**introduction page**](https://maxinexiong.github.io/intro-codemaxgpt.html) of the web application.
+For a detailed demonstration of using **CodeMaxGPT**, please visit the [**introduction page**](https://maxinexiong.github.io/intro-codemaxgpt.html) of the web application, or click on the badge below.
+
+[![Watch Demos - CodeMaxGPT](https://img.shields.io/badge/Watch_Demos-CodeMaxGPT-6699FF)](https://maxinexiong.github.io/intro-codemaxgpt.html)
 
 <br/>
 
