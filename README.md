@@ -33,7 +33,7 @@ Click the badge below to access the web applications:
 
 Welcome to the **[unofficial platform for custom web applications powered by OpenAI APIs](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/)**! This repository hosts 
 a collection of web applications deployed on *[Streamlit Cloud](https://streamlit.io/cloud)*. These applications leverage the capabilities of OpenAI's powerful language models to provide 
-unique functionalities. Currently, the platform includes three web applications:
+unique functionalities. Currently, the platform includes two web applications:
 
 ### Talk to GPT
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT) 
