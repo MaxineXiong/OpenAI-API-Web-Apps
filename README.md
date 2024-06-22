@@ -33,7 +33,7 @@ Click the badge below to access the web applications:
 
 Welcome to the **[unofficial platform for custom web applications powered by OpenAI APIs](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/)**! This repository hosts 
 a collection of web applications deployed on *[Streamlit Cloud](https://streamlit.io/cloud)*. These applications leverage the capabilities of OpenAI's powerful language models to provide 
-unique functionalities. Currently, the platform includes three web applications:
+unique functionalities. Currently, the platform includes two web applications:
 
 ### Talk to GPT
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://maxinexiong-openai-api-web-apps-home-xbxlm8.streamlit.app/Talk_To_GPT) 
@@ -143,16 +143,25 @@ Below are two GIF images that demonstrate the usage of the **Talk to GPT** appli
 
 
 <p align='center'>
-    <img width=600 src="https://github.com/MaxineXiong/OpenAI-API-Web-Apps/assets/55864839/ca2629b8-5506-42e8-814b-5319429aaf83">
+    <img width=600 src="https://github.com/MaxineXiong/OpenAI-API-Web-Apps/assets/55864839/e0f8020a-0128-45ca-83f0-af658ab1e37a">
     <br>Interacting through text messages
 </p>
+
 
 ###
 
 <p align='center'>
-    <img width=600 src="https://github.com/MaxineXiong/OpenAI-API-Web-Apps/assets/55864839/9d975dc5-5d38-4ee3-8cf2-085249f166fb">
+    <img width=600 src="https://github.com/MaxineXiong/OpenAI-API-Web-Apps/assets/55864839/9184302a-0e0f-4488-a207-b7dafdc4675a">
     <br>Interacting through speech input
 </p>
+
+###
+
+You can also view the full demo video of the **Talk to GPT** application by clicking on the badge below.
+
+[![Watch Demo - Talk to GPT](https://img.shields.io/badge/Watch_Demo-Talk_to_GPT-6699FF)](https://1drv.ms/v/s!AhxVr7ogXVBRlS_l5uFoOAseoO7t)
+
+<br/>
 
 ### **Get Started with CodeMaxGPT**
 
@@ -166,7 +175,9 @@ To use the **CodeMaxGPT** application, follow these steps:
 6. The coding assistant will provide suggestions, completions, and other assistance based on the request prompt you select and the code you provide.
 7. Feel free to explore the other features of **CodeMaxGPT** to assist you in your coding tasks.
 
-For a detailed demonstration of using **CodeMaxGPT**, please visit the [**introduction page**](https://maxinexiong.github.io/intro-codemaxgpt.html) of the web application.
+For a detailed demonstration of using **CodeMaxGPT**, please visit the [**introduction page**](https://maxinexiong.github.io/intro-codemaxgpt.html) of the web application, or click on the badge below.
+
+[![Watch Demos - CodeMaxGPT](https://img.shields.io/badge/Watch_Demos-CodeMaxGPT-6699FF)](https://maxinexiong.github.io/intro-codemaxgpt.html)
 
 <br/>
 
