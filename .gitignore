@@ -1,1 +1,3 @@
-ARCHIVE
+ARCHIVE/
+venv/
+__pycache__
