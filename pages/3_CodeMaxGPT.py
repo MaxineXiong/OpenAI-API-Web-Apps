@@ -529,7 +529,7 @@ class App:
         # Get the GPT model selected by the user
         MODEL = cl1.selectbox(
             "Select a GPT model",
-            ("gpt-4-turbo", "gpt-4o", "gpt-3.5-turbo"),
+            ("gpt-4-turbo", "gpt-4o-mini", "gpt-4o", "gpt-3.5-turbo"),
             help=(
                 "For many basic tasks, the difference between GPT-4 and "
                 "GPT-3.5 model is not significant. However, in more "
