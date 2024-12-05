@@ -83,12 +83,12 @@ class ChatGPTBot:
 
 
     def chat(self, user_message: str, text_or_speak: str,
-             selected_model: str = "gpt-3.5-turbo"):
+             selected_model: str = "gpt-4o-mini"):
         """Method to respond to user's message in both text and speech audio.
         Args:
         - user_message (string): The user's input message.
         - text_or_speak (string): Type of communication.
-        - model (string): The GPT model to use. Default is 'gpt-3.5-turbo'.
+        - model (string): The GPT model to use. Default is 'gpt-4o-mini'.
         """
         if user_message.strip():
             # Send user message to GPT model and get bot's message
@@ -245,7 +245,7 @@ class ChatApp:
         # Display a subheader that briefly describe the chatbot web app
         st.subheader(
             "Emplowering Conversations: A ChatBot You Can Message Or Talk "
-            "To, Powered By OpenAI's GPT-3.5/4 Models, Whisper "
+            "To, Powered By OpenAI's GPT-4o/o1 Models, Whisper "
             "(speech-to-text) Model, and TTS (text-to-speech) Model "
             ":robot_face:"
         )
@@ -254,15 +254,15 @@ class ChatApp:
         # Get the GPT model selected by the user
         MODEL = col1.selectbox(
             "Select a GPT model",
-            ("gpt-3.5-turbo", "gpt-4o-mini", "gpt-4o", "gpt-4-turbo"),
+            ("gpt-4o-mini", "gpt-4o", "o1-mini", "o1-preview", "gpt-4-turbo"),
             help=(
-                "For many basic tasks, the difference between GPT-4 "
-                "and GPT-3.5 model is not significant. However, in more "
-                "complex reasoning situations, GPT-4 models are much more "
-                "capable than any of the previous models, though they do "
-                "come at a higher usage cost. Please visit "
-                "https://platform.openai.com/docs/models/overview for more "
-                "information on GPT models."
+                "For many basic tasks, the difference between GPT-4, GPT-4o, "
+                "and o1 models is not significant. However, "
+                "in more complex reasoning situations, the o1 series of models "
+                "are much more capable than any of the previous models, though "
+                "they do come at a higher usage cost. Please visit "
+                "https://platform.openai.com/docs/models for more "
+                "information on OpenAI models."
             ),
         )
         # Get the API key from the user
