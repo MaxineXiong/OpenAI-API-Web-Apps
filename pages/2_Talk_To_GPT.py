@@ -245,7 +245,7 @@ class ChatApp:
         # Display a subheader that briefly describe the chatbot web app
         st.subheader(
             "Emplowering Conversations: A ChatBot You Can Message Or Talk "
-            "To, Powered By OpenAI's GPT-4o/o1 Models, Whisper "
+            "To, Powered By OpenAI's GPT Models, Whisper "
             "(speech-to-text) Model, and TTS (text-to-speech) Model "
             ":robot_face:"
         )
@@ -254,14 +254,14 @@ class ChatApp:
         # Get the GPT model selected by the user
         MODEL = col1.selectbox(
             "Select a GPT model",
-            ("gpt-4o-mini", "gpt-4o", "o1-mini", "o1-preview", "gpt-4-turbo"),
+            ("gpt-4o-mini", "o3-mini", "gpt-4o", "o1", "gpt-4.5-preview"),
             help=(
-                "For many basic tasks, the difference between GPT-4, GPT-4o, "
-                "and o1 models is not significant. However, "
-                "in more complex reasoning situations, the o1 series of models "
-                "are much more capable than any of the previous models, though "
-                "they do come at a higher usage cost. Please visit "
-                "https://platform.openai.com/docs/models for more "
+                "For many basic tasks, the difference between the various GPT "
+                "models is not significant. However, in more complex reasoning "
+                "situations, the more recent models such as o1, o3-mini "
+                "and GPT-4.5 are much more capable than any of the previous "
+                "models, though they may come at a higher usage cost. Please "
+                "visit https://platform.openai.com/docs/models for more "
                 "information on OpenAI models."
             ),
         )

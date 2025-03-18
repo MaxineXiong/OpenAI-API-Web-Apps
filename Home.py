@@ -32,7 +32,7 @@ st.markdown(
 )
 
 # Display a markdown bullet point with a microphone emoji and ...
-# ...a link to "Talk To GPT-3.5" app
+# ...a link to "Talk To GPT" app
 st.markdown("- **[:microphone: Talk To GPT](./Talk_To_GPT)**")
 # Display a markdown bullet point with a computer emoji and ...
 # ...a link to "CodeMaxGPT" app

@@ -58,13 +58,13 @@ class CoderBot:
     """Define the class for the Coding Assistant Bot
     """
 
-    def __init__(self, api_key: str, selected_model: str = "o1-mini"):
+    def __init__(self, api_key: str, selected_model: str = "o3-mini"):
         """Initialize a new instance of the CoderBot class.
         Args:
         - api_key (string): The OpenAI API key used to authenticate
         with the OpenAI service.
         - selected_model (string): The GPT model to use. Default is
-        'o1-mini'.
+        'o3-mini'.
         """
         # Instantiate a client object using api_key
         self.api_key = api_key
@@ -529,14 +529,14 @@ class App:
         # Get the GPT model selected by the user
         MODEL = cl1.selectbox(
             "Select a GPT model",
-            ("o1-mini", "gpt-4o", "gpt-4o-mini", "o1-preview", "gpt-4-turbo"),
+            ("o3-mini", "gpt-4o-mini", "gpt-4o", "o1", "gpt-4.5-preview"),
             help=(
-                "For many basic tasks, the difference between GPT-4, GPT-4o, "
-                "and o1 models is not significant. However, "
-                "in more complex reasoning situations, the o1 series of models "
-                "are much more capable than any of the previous models, though "
-                "they do come at a higher usage cost. Please visit "
-                "https://platform.openai.com/docs/models for more "
+                "For many basic tasks, the difference between the various GPT "
+                "models is not significant. However, in more complex reasoning "
+                "situations, the more recent models such as o1, o3-mini "
+                "and GPT-4.5 are much more capable than any of the previous "
+                "models, though they may come at a higher usage cost. Please "
+                "visit https://platform.openai.com/docs/models for more "
                 "information on OpenAI models."
             ),
         )
